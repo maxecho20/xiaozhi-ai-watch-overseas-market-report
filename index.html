@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="小智 AI 儿童手表海外市场调研报告：美国、欧洲和东南亚。">
+  <title>小智 AI 儿童手表｜海外市场调研</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #12221f;
+      --muted: #5b6864;
+      --paper: #f6f4ec;
+      --card: #fffdf7;
+      --mint: #c8e6d4;
+      --mint-strong: #0f6c51;
+      --orange: #f26a3d;
+      --yellow: #f8cf5e;
+      --line: #d8ddd6;
+      --dark: #13231f;
+      --serif: "Noto Serif SC", "Songti SC", serif;
+      --sans: "Manrope", "PingFang SC", sans-serif;
+      --mono: "DM Mono", monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 9% 0%, rgba(255, 216, 106, .25), transparent 22rem),
+        radial-gradient(circle at 92% 12%, rgba(88, 181, 141, .16), transparent 28rem),
+        var(--paper);
+      font-family: var(--sans);
+      line-height: 1.68;
+    }
+    a { color: #075c46; text-underline-offset: 3px; }
+    a:hover { color: var(--orange); }
+    .shell { max-width: 1440px; margin: 0 auto; padding: 0 34px 96px; }
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 18px; padding: 22px 0; border-bottom: 1px solid rgba(18,34,31,.16);
+      font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+    }
+    .brand { display: flex; align-items: center; gap: 9px; color: var(--ink); }
+    .brand-mark {
+      display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%;
+      color: #fff; background: var(--mint-strong); font-weight: 700; font-family: var(--sans);
+    }
+    .report-meta { color: var(--muted); white-space: nowrap; }
+    .hero { padding: 78px 0 54px; display: grid; grid-template-columns: 1.34fr .66fr; gap: 56px; align-items: end; }
+    .eyebrow { margin: 0 0 12px; color: var(--mint-strong); font: 500 12px var(--mono); letter-spacing: .11em; text-transform: uppercase; }
+    h1, h2, h3 { letter-spacing: -.03em; }
+    h1 { margin: 0; max-width: 800px; font: 900 clamp(40px, 6.2vw, 77px)/1.12 var(--serif); }
+    .hero-lede { max-width: 720px; margin: 24px 0 0; color: #3f504a; font-size: 19px; }
+    .hero-aside { padding: 23px 24px; border-left: 5px solid var(--orange); background: rgba(255,253,247,.68); box-shadow: 8px 9px 0 rgba(18,34,31,.08); }
+    .hero-aside strong { display: block; font: 800 18px/1.35 var(--serif); }
+    .hero-aside p { margin: 7px 0 0; color: var(--muted); font-size: 15px; }
+    .hero-actions { display: flex; gap: 10px; margin-top: 24px; }
+    .button {
+      appearance: none; cursor: pointer; border: 1px solid var(--ink); padding: 9px 14px;
+      font: 600 12px var(--sans); color: var(--ink); background: transparent; border-radius: 999px;
+    }
+    .button:hover { background: var(--ink); color: #fff; }
+    .quick-nav {
+      position: sticky; top: 0; z-index: 5; display: flex; gap: 8px; overflow-x: auto;
+      padding: 13px 0; margin-bottom: 35px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+      background: rgba(246,244,236,.92); backdrop-filter: blur(8px);
+    }
+    .quick-nav a { flex: 0 0 auto; padding: 4px 10px; color: var(--muted); text-decoration: none; font-size: 12px; }
+    .quick-nav a:hover { color: var(--mint-strong); }
+    .decision {
+      position: relative; overflow: hidden; padding: 34px 36px; margin: 0 0 48px; color: #f6f4ec; background: var(--dark);
+      border-radius: 4px;
+    }
+    .decision::after {
+      content: ""; position: absolute; right: -48px; bottom: -70px; width: 280px; height: 280px; border-radius: 50%;
+      border: 32px solid rgba(200,230,212,.15);
+    }
+    .decision .eyebrow { color: var(--yellow); }
+    .decision h2 { margin: 0; max-width: 860px; font: 700 clamp(25px, 3.3vw, 43px)/1.28 var(--serif); }
+    .decision p { position: relative; z-index: 1; max-width: 790px; margin: 17px 0 0; color: #d8e1dd; }
+    .stats { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; margin: 30px 0 0; background: rgba(255,255,255,.14); }
+    .stat { padding: 19px 18px; background: rgba(19,35,31,.86); }
+    .stat b { display: block; color: var(--yellow); font: 700 30px/1 var(--mono); letter-spacing: -.07em; }
+    .stat span { display: block; margin-top: 8px; color: #c8d0cd; font-size: 12px; }
+    .section { padding: 42px 0; border-top: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: 155px 1fr; gap: 26px; align-items: baseline; margin-bottom: 24px; }
+    .section-no { color: var(--orange); font: 500 12px var(--mono); letter-spacing: .1em; }
+    h2 { margin: 0; font: 800 clamp(26px, 3vw, 39px)/1.2 var(--serif); }
+    h3 { margin: 0 0 9px; font: 700 19px/1.35 var(--serif); }
+    .section-intro { margin: 0; color: var(--muted); font-size: 17px; }
+    .maturity { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .market-card { min-height: 242px; padding: 23px; background: var(--card); border: 1px solid var(--line); border-radius: 3px; }
+    .market-card.featured { border-color: var(--mint-strong); box-shadow: 7px 7px 0 var(--mint); }
+    .market-card .rate { float: right; color: var(--orange); font: 500 14px var(--mono); }
+    .market-card p { margin: 0; color: var(--muted); font-size: 15px; }
+    .market-card .take { margin-top: 16px; padding-top: 13px; border-top: 1px dashed var(--line); color: var(--ink); font-size: 15px; font-weight: 600; }
+    .note { margin: 20px 0 0; padding: 16px 19px; border-left: 4px solid var(--yellow); background: rgba(248,207,94,.16); color: #46504b; font-size: 15px; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--card); }
+    table { width: 100%; min-width: 980px; border-collapse: collapse; font-size: 15px; line-height: 1.56; }
+    th { padding: 16px 18px; background: #e9eee8; color: #415049; text-align: left; font: 500 12px var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+    td { padding: 18px; vertical-align: top; border-top: 1px solid var(--line); }
+    td:first-child { white-space: nowrap; font-weight: 700; }
+    tr:hover td { background: #fbfcf8; }
+    .channel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .channel { padding: 21px 23px; background: var(--card); border: 1px solid var(--line); }
+    .channel-label { display: inline-block; margin-bottom: 10px; color: var(--mint-strong); font: 500 11px var(--mono); letter-spacing: .1em; }
+    .channel p { margin: 0; font-size: 16px; }
+    .channel .finding { margin-top: 12px; color: var(--muted); font-size: 14px; }
+    .sorftime {
+      margin-top: 24px; padding: 27px 29px; background: #ebf2ef; border: 1px solid #c9dbd1;
+      display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px;
+    }
+    .code { overflow: auto; margin: 13px 0; padding: 13px; color: #d7f4e6; background: #112620; font: 12px/1.65 var(--mono); }
+    .warning { padding: 14px; border: 1px solid #ebb69e; color: #8d3c20; background: #fff4eb; font-size: 13px; }
+    .price-grid { display: grid; grid-template-columns: repeat(5,1fr); border: 1px solid var(--line); background: var(--line); gap: 1px; }
+    .price { padding: 18px; background: var(--card); }
+    .price b { display: block; font-size: 15px; }
+    .price .money { display: block; margin: 11px 0 4px; color: var(--mint-strong); font: 500 22px var(--mono); letter-spacing: -.07em; }
+    .price small { color: var(--muted); font-size: 13px; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .good, .avoid { padding: 27px; border-radius: 3px; }
+    .good { background: var(--mint); }
+    .avoid { background: #fbe5d9; }
+    .good ul, .avoid ul { margin: 11px 0 0; padding-left: 20px; }
+    .good li, .avoid li { margin: 7px 0; font-size: 16px; }
+    .compliance { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .legal { padding: 21px; border-top: 4px solid var(--dark); background: var(--card); }
+    .legal h3 { font-family: var(--sans); }
+    .legal p { color: var(--muted); font-size: 15px; }
+    .roadmap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 20px; }
+    .steps { counter-reset: item; margin: 0; padding: 0; list-style: none; }
+    .steps li { position: relative; min-height: 78px; padding: 0 0 20px 56px; }
+    .steps li::before { counter-increment: item; content: "0" counter(item); position: absolute; left: 0; top: 0; color: var(--orange); font: 500 21px var(--mono); }
+    .steps li:not(:last-child)::after { content: ""; position: absolute; top: 34px; bottom: 0; left: 13px; border-left: 1px solid var(--line); }
+    .steps b { display: block; margin-bottom: 4px; }
+    .steps span { color: var(--muted); font-size: 15px; }
+    .metrics { padding: 23px; background: var(--dark); color: #f5f3ea; }
+    .metrics h3 { color: var(--yellow); }
+    .metric-row { display: flex; justify-content: space-between; gap: 14px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.15); font-size: 15px; }
+    .metric-row b { color: var(--yellow); font-family: var(--mono); }
+    .sources { columns: 2; column-gap: 28px; }
+    .sources a { display: inline-block; margin: 5px 0; font-size: 15px; }
+    .data-board { padding: 30px; margin: 8px 0 24px; background: #10241e; color: #f7f6ef; border-radius: 4px; }
+    .data-board h3 { color: var(--yellow); font-size: 23px; }
+    .data-board p { color: #cfdbd4; font-size: 15px; }
+    .data-hero { display: grid; grid-template-columns: 1.25fr .75fr; gap: 28px; align-items: end; }
+    .data-hero .big-number { display: block; color: #f7cf5e; font: 700 clamp(44px,6vw,78px)/.95 var(--mono); letter-spacing: -.1em; }
+    .data-hero .big-label { display: block; margin-top: 10px; color: #cdd7d2; font-size: 16px; }
+    .data-source { padding: 16px; background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.16); font-size: 13px; }
+    .source-grade { display: inline-block; padding: 4px 8px; margin-bottom: 7px; color: #10241e; background: var(--mint); font: 600 11px var(--mono); letter-spacing: .06em; }
+    .sorftime-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 13px; }
+    .dimension { padding: 22px; min-height: 205px; border: 1px solid var(--line); background: var(--card); }
+    .dimension h3 { font-family: var(--sans); font-size: 18px; }
+    .dimension .score { display: block; margin: 15px 0 12px; color: var(--mint-strong); font: 700 44px/1 var(--mono); letter-spacing: -.11em; }
+    .dimension p { margin: 0; color: var(--muted); font-size: 14px; }
+    .score-line { display: flex; gap: 4px; margin-top: 14px; }
+    .score-line i { width: 22px; height: 7px; background: #dfe5df; }
+    .score-line i.active { background: var(--orange); }
+    .score-line i.half { background: linear-gradient(90deg, var(--orange) 50%, #dfe5df 50%); }
+    .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 22px; }
+    .chart { padding: 25px; border: 1px solid var(--line); background: var(--card); }
+    .chart h3 { font-family: var(--sans); }
+    .chart small { color: var(--muted); font-size: 13px; }
+    .bar-set { margin-top: 22px; }
+    .bar-row { display: grid; grid-template-columns: 142px 1fr 80px; gap: 12px; align-items: center; margin: 15px 0; font-size: 14px; }
+    .bar-track { height: 20px; overflow: hidden; background: #e5e9e2; }
+    .bar-fill { display: block; height: 100%; background: var(--mint-strong); }
+    .bar-fill.orange { background: var(--orange); }
+    .bar-row b { font: 500 14px var(--mono); text-align: right; }
+    .delta { padding: 3px 6px; color: #0f6c51; background: #dcefe4; font: 500 11px var(--mono); }
+    .delta.down { color: #a14324; background: #fae0d5; }
+    .matrix-card { margin-top: 22px; padding: 26px; background: var(--card); border: 1px solid var(--line); }
+    .matrix { position: relative; min-height: 470px; margin-top: 20px; border-left: 2px solid var(--ink); border-bottom: 2px solid var(--ink); background-image: linear-gradient(to right, transparent 49.7%, var(--line) 50%, transparent 50.3%), linear-gradient(to bottom, transparent 49.7%, var(--line) 50%, transparent 50.3%); background-size: 100% 100%; }
+    .matrix::before { content: "市场容量 / 年付费空间 →"; position: absolute; right: 4px; bottom: -32px; color: var(--muted); font: 500 12px var(--mono); }
+    .matrix::after { content: "进入可行性 ↑"; position: absolute; left: -4px; top: -34px; color: var(--muted); font: 500 12px var(--mono); }
+    .quad-label { position: absolute; color: #8a9891; font: 600 12px var(--mono); letter-spacing: .04em; }
+    .quad-label.q1 { right: 18px; top: 14px; }.quad-label.q2 { left: 18px; top: 14px; }.quad-label.q3 { left: 18px; bottom: 14px; }.quad-label.q4 { right: 18px; bottom: 14px; }
+    .dot { position: absolute; transform: translate(-50%,-50%); padding: 8px 10px; color: #fff; background: var(--mint-strong); border: 2px solid #fffdf7; border-radius: 999px; box-shadow: 0 3px 0 rgba(18,34,31,.18); font: 700 13px var(--sans); white-space: nowrap; }
+    .dot.orange { background: var(--orange); }.dot.yellow { color: #3e3316; background: var(--yellow); }.dot.outline { color: var(--ink); background: #f5f4ed; border-color: var(--mint-strong); }
+    .evidence-panel { margin: 24px 0; padding: 28px; border: 1px solid #315448; background: #f1f5ef; }
+    .evidence-panel h3 { font-size: 24px; }
+    .evidence-panel > p { max-width: 920px; margin: 0; color: var(--muted); font-size: 15px; }
+    .evidence-legend { display: flex; flex-wrap: wrap; gap: 9px; margin: 18px 0; }
+    .evidence-legend span { padding: 4px 9px; font: 500 11px var(--mono); color: #45574e; background: #e0e8e2; }
+    .brand-data-list { border-top: 1px solid #cbd8cf; }
+    .brand-data-row { display: grid; grid-template-columns: 132px 1fr minmax(240px,1.75fr) 58px; gap: 16px; align-items: center; padding: 13px 0; border-bottom: 1px solid #d4dfd7; }
+    .brand-data-row strong { font-size: 15px; }
+    .evidence-track { height: 15px; background: #dbe4dc; }
+    .evidence-track i { display: block; height: 100%; background: var(--mint-strong); }
+    .evidence-track i.company { background: var(--yellow); }
+    .evidence-track i.none { background: #aebbb2; }
+    .brand-data-row .signal { color: #53625b; font-size: 14px; }
+    .grade { justify-self: end; padding: 3px 6px; color: #fff; background: var(--mint-strong); font: 600 11px var(--mono); }
+    .grade.b { color: #423515; background: var(--yellow); }.grade.c { background: #718078; }
+    .product-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 26px; }
+    .product-card { overflow: hidden; display: flex; flex-direction: column; min-height: 362px; border: 1px solid var(--line); background: var(--card); box-shadow: 3px 3px 0 rgba(18,34,31,.06); transition: transform .18s ease, box-shadow .18s ease; }
+    .product-card:hover { transform: translateY(-4px); box-shadow: 7px 8px 0 rgba(18,34,31,.13); }
+    .product-card img { display: block; width: 100%; height: 178px; object-fit: contain; background: #f0f1eb; }
+    .product-card-body { display: flex; flex: 1; flex-direction: column; padding: 16px; }
+    .product-card .region { color: var(--orange); font: 500 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .product-card h3 { margin: 5px 0 7px; font: 700 18px/1.2 var(--sans); }
+    .product-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 5px; margin: 12px 0; }
+    .tag-row span { padding: 3px 6px; color: #295441; background: #ddede2; font: 500 10px var(--mono); }
+    .product-card a { margin-top: auto; color: var(--ink); font-size: 13px; font-weight: 800; text-decoration: none; }
+    .product-card a::after { content: " ↗"; color: var(--orange); }
+    .growth-space { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; }
+    .growth-card { padding: 26px; background: #fffdf7; border: 1px solid var(--line); }
+    .growth-card.dark { color: #f7f6ef; background: var(--dark); border-color: var(--dark); }
+    .growth-card.dark h3 { color: var(--yellow); }.growth-card.dark p { color: #cbd6d0; }
+    .growth-card p { margin: 0; color: var(--muted); font-size: 15px; }
+    .space-row { display: grid; grid-template-columns: 118px 1fr 40px; gap: 12px; align-items: center; margin: 15px 0; font-size: 14px; }
+    .space-track { height: 15px; background: #dde4dd; }
+    .space-track i { display: block; height: 100%; background: var(--orange); }
+    .growth-card.dark .space-track { background: rgba(255,255,255,.16); }.growth-card.dark .space-track i { background: var(--yellow); }
+    .space-row b { font: 500 13px var(--mono); text-align: right; }
+    .connection-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 20px; margin-top: 24px; }
+    .connection-card { padding: 28px; border-top: 6px solid var(--mint-strong); background: var(--card); }
+    .connection-card.wifi { border-color: var(--yellow); }
+    .connection-card h3 { font-size: 25px; }
+    .connection-card ul { margin: 14px 0 0; padding-left: 20px; }
+    .connection-card li { margin: 8px 0; font-size: 15px; }
+    .connection-card .position { display: block; margin-top: 18px; padding: 12px; color: #264d3b; background: #e0eee5; font-size: 14px; font-weight: 700; }
+    .connection-card.wifi .position { color: #6e5015; background: #fff1c7; }
+    .ai-case { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 22px; }
+    .ai-case article { padding: 23px; border: 1px solid var(--line); background: var(--card); }
+    .ai-case article:last-child { border-color: #e3aa91; background: #fff3ea; }
+    .ai-case p { margin: 0; color: var(--muted); font-size: 15px; }
+    .ai-case .score { display: block; margin: 6px 0 10px; color: var(--mint-strong); font: 700 35px/1 var(--mono); letter-spacing: -.09em; }
+    footer { padding: 34px 0 0; margin-top: 14px; color: var(--muted); border-top: 1px solid var(--line); font: 11px var(--mono); letter-spacing: .03em; }
+    @media (max-width: 860px) {
+      .shell { padding: 0 18px 60px; }
+      .hero, .sorftime, .roadmap { grid-template-columns: 1fr; gap: 26px; }
+      .maturity, .compliance { grid-template-columns: 1fr; }
+      .price-grid { grid-template-columns: 1fr 1fr; }
+      .split, .channel-grid { grid-template-columns: 1fr; }
+      .sorftime-grid, .charts { grid-template-columns: 1fr; }
+      .data-hero { grid-template-columns: 1fr; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .brand-data-row { grid-template-columns: 110px 1fr; gap: 8px 12px; }
+      .brand-data-row .signal { grid-column: 1 / -1; }
+      .brand-data-row .grade { grid-column: 2; grid-row: 1; }
+      .growth-space, .connection-grid, .ai-case { grid-template-columns: 1fr; }
+      .section-head { grid-template-columns: 1fr; gap: 8px; }
+      .stats { grid-template-columns: 1fr; }
+      .sources { columns: 1; }
+      .matrix { min-height: 390px; }
+    }
+    @media print {
+      @page { margin: 14mm; }
+      body { background: #fff; }
+      .shell { max-width: none; padding: 0; }
+      .quick-nav, .hero-actions { display: none; }
+      .hero { padding: 22px 0 34px; }
+      .section { break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
+      .decision { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="topbar">
+      <div class="brand"><span class="brand-mark">智</span> XIAOZHI / MARKET INTELLIGENCE</div>
+      <div class="report-meta">CONFIDENTIAL · 2026.08.18 · V1.2</div>
+    </div>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">INVESTMENT MEMO · KIDS CONNECTED WEARABLES</p>
+        <h1>小智 AI 儿童手表<br>海外市场调研</h1>
+        <p class="hero-lede">美国、欧洲与东南亚的品牌格局、渠道证据、订阅模型与合规边界。研究对象是面向 5–12 岁、由家长购买与管理的独立蜂窝智能手表。</p>
+        <div class="hero-actions">
+          <button class="button" onclick="window.print()">打印 / 导出 PDF</button>
+          <a class="button" href="#decision">查看立项建议</a>
+        </div>
+      </div>
+      <aside class="hero-aside">
+        <strong>核心不是 AI 功能，<br>而是“安全连接”的持续服务。</strong>
+        <p>白名单通信、定位、安全区、SOS、上课模式与家长 App 是支付理由；受控 AI 应该提升留存和家庭价值，而非替代这些基本能力。</p>
+      </aside>
+    </section>
+
+    <nav class="quick-nav" aria-label="报告导航">
+      <a href="#decision">结论</a><a href="#maturity">市场成熟度</a><a href="#brands">品牌版图</a><a href="#commerce">电商数据</a><a href="#sorftime-framework">Sorftime 四维法</a><a href="#top10">Top 10 经营数据</a><a href="#model">商业模型</a><a href="#product">产品边界</a><a href="#compliance">合规</a><a href="#roadmap">90 天验证</a>
+    </nav>
+
+    <section id="decision" class="decision">
+      <p class="eyebrow">DECISION</p>
+      <h2>建议立项 90 天受控验证项目，<br>不建议直接大货。</h2>
+      <p>欧美儿童智能表已经是成熟的“硬件 + 蜂窝月费 + 家长 App”市场；AI 儿童表却仍是早期子品类。小智应定位为 <strong>安全连接表 + 受控 AI 服务</strong>，而非开放式儿童聊天机器人。市场顺序建议：美国商业化试点 → 德国/北欧 → 新加坡验证后扩泰国/马来西亚。</p>
+      <div class="stats">
+        <div class="stat"><b>$0.57B</b><span>2025 美国儿童智能表估算市场规模*</span></div>
+        <div class="stat"><b>$0.75B</b><span>2025 欧洲儿童智能表估算市场规模*</span></div>
+        <div class="stat"><b>83%</b><span>Xplora 2024 连接服务毛利率</span></div>
+      </div>
+      <p style="font-size:12px;margin-top:14px;color:#bfc9c4">* 第三方广义儿童表口径，仅用于量级判断；不同机构定义和估算存在明显差异，不能直接作为小智收入预测。</p>
+    </section>
+
+    <section id="maturity" class="section">
+      <div class="section-head"><span class="section-no">01 / MATURITY</span><div><h2>市场成熟度：欧美已成型，东南亚需逐国验证</h2><p class="section-intro">成熟的是儿童“安全连接”品类，而不是 AI 功能本身。</p></div></div>
+      <div class="maturity">
+        <article class="market-card featured"><span class="rate">4 / 5</span><h3>美国</h3><p>Verizon、Gabb、COSMO、Google Fitbit、Garmin、Apple 同时存在，普遍按月收费。消费者已理解“孩子不配手机，也可以独立通信和定位”。</p><p class="take">小智含义：空间最大、客单最高；但运营商、COPPA 和售后要求也是最高。</p></article>
+        <article class="market-card featured"><span class="rate">4 / 5</span><h3>欧洲</h3><p>德国与北欧最成熟。Xplora 2024 年首次激活 47.9 万，德国贡献 25.7 万；运营商、零售、Amazon 与 DTC 的组合已非常清晰。</p><p class="take">小智含义：优先德国/北欧，但要本地语言、GDPR、运营商与本地售后。</p></article>
+        <article class="market-card"><span class="rate">2.5 / 5</span><h3>东南亚</h3><p>新加坡已有 myFirst、Spacetalk、Garmin、Apple 等完整供给；但区域儿童表的公开可审计 GMV/订阅规模仍不足。</p><p class="take">小智含义：适合做产品与资费验证，不应把新加坡直接外推为全东南亚。</p></article>
+      </div>
+      <p class="note"><strong>AI 先行信号：</strong>LAGENIO K9 已将 Nio AI Learning Assistant 与 4G、GPS、白名单控制组合销售，欧英版标价 €159。它证明 AI 已被试水，但尚无公开证据证明 AI 本身形成大规模溢价。<a href="https://watch.lagenio.com/collections/kids-watch/products/k9-4g-ai-kids-smart-watch">查看商品页</a></p>
+    </section>
+
+    <section id="brands" class="section">
+      <div class="section-head"><span class="section-no">02 / LANDSCAPE</span><div><h2>主要非中国品牌与公司</h2><p class="section-intro">中国品牌如 imoo、华为、小米不计入表内，但必须纳入实际竞品监控。</p></div></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>区域</th><th>公司 / 品牌</th><th>代表模式</th><th>价格与渠道信号</th><th>对小智的意义</th></tr></thead>
+          <tbody>
+            <tr><td>美国</td><td>Verizon</td><td>Gizmo Watch 3；运营商自有设备 + 月费</td><td>$149.99；服务 $10/月；约 2,900 条公开评论</td><td>运营商分发与连接可靠性的标杆。<a href="https://www.verizon.com/connected-smartwatches/verizon-gizmo-watch-3">来源</a></td></tr>
+            <tr><td>美国</td><td>Gabb Wireless</td><td>Gabb Watch 3e；无社媒首台手机</td><td>DTC、Amazon、Walmart；$149.99；$12.99–17.99/月</td><td>安全叙事、订阅和换机体系成熟。<a href="https://gabb.com/support/en/articles/11164548-gabb-service-plans-and-family-rates">来源</a></td></tr>
+            <tr><td>美国</td><td>COSMO</td><td>JrTrack 5；GPS、白名单通信、SOS</td><td>DTC + Amazon；$79.99；年付等价 $12.99/月；1,700+ 评论</td><td>高性价比的直接竞品。<a href="https://cosmotogether.com/pages/get-safe-connection">来源</a></td></tr>
+            <tr><td>美国</td><td>Google / Fitbit</td><td>Fitbit Ace LTE；定位、通话、运动游戏</td><td>Google Store；$179.99；Ace Pass $9.99/月或 $119/年</td><td>把内容/运动激励放入订阅，值得研究留存。<a href="https://store.google.com/product/fitbit_ace_lte?hl=en-US">来源</a></td></tr>
+            <tr><td>美国</td><td>Apple</td><td>Apple Watch for Your Kids / Family Setup</td><td>蜂窝 Apple Watch + 家庭共享 + 运营商套餐</td><td>高端替代品，品牌/App 极强但总成本和控制复杂度较高。<a href="https://support.apple.com/en-gb/109036">来源</a></td></tr>
+            <tr><td>全球</td><td>Garmin</td><td>Bounce / Bounce 2；定位、通信、运动与任务奖励</td><td>Bounce 2 公开售价 $299.99，需 LTE 订阅</td><td>定位可信度、运动和家长端体验标杆。<a href="https://www.garmin.com/es-MX/p/1815501/">来源</a></td></tr>
+            <tr><td>欧洲</td><td>Xplora（挪威）</td><td>X6Play、XGO；手表 + 家长 App + MVNO/服务</td><td>运营商、零售、Amazon、DTC；合作 Vodafone、Deutsche Telekom、Orange</td><td>欧洲头部，渠道和订阅护城河最强。<a href="https://investor.xplora.com/pages/this-is-xplora">来源</a></td></tr>
+            <tr><td>欧洲</td><td>Anio（德国）</td><td>Anio 6；儿童表 + 可选 SIM</td><td>DTC；无强制平台月费；合作 SIM 约 €5/月</td><td>开放 SIM 路线说明月费并非唯一解。<a href="https://support.anio.eu/hc/de/articles/12028969329553-Kommen-monatliche-Kosten-auf-mich-zu">来源</a></td></tr>
+            <tr><td>欧洲</td><td>SaveFamily（西班牙）</td><td>SaveWatch / Iconic；GPS、通话、视频通话</td><td>DTC；儿童款入口约 €89–105</td><td>欧洲中低价独立站竞品。<a href="https://savefamilygps.com/en">来源</a></td></tr>
+            <tr><td>东南亚</td><td>myFirst / OAXIS（新加坡）</td><td>Fone S4、R2、S3；4G、GPS、视频通话、Circle</td><td>独立站、Shopee、Lazada、线下零售；覆盖多个东南亚国家</td><td>区域本土化标杆，eSIM/白名单/漫游值得借鉴。<a href="https://sg.myfirst.tech/collections/smart-watch-for-kids">来源</a></td></tr>
+            <tr><td>东南亚在售</td><td>Spacetalk（澳大利亚）</td><td>Loop；4G、GPS、上课模式、SOS</td><td>新加坡 DTC/区域零售；移动套餐 + App 订阅</td><td>“上课模式 + 安全区 + 无浏览器”是小智的功能基线。<a href="https://spacetalk.co/en-sg/products/loop-smartwatch-no-sim">来源</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="commerce" class="section">
+      <div class="section-head"><span class="section-no">03 / COMMERCE</span><div><h2>电商证据：渠道组合比单一平台更重要</h2><p class="section-intro">蜂窝儿童表不是单纯的 Amazon 商品，也不是只有 TikTok 内容就能成立的品类。</p></div></div>
+      <div class="channel-grid">
+        <article class="channel"><span class="channel-label">AMAZON</span><h3>13%：关键补充渠道</h3><p>Xplora 2025 H1 Kids & Youth 单位销量中，Amazon 占 13%；运营商为 47%、零售为 29%。</p><p class="finding">结论：Amazon 必要但通常不是最大的分发渠道。<a href="https://cdn.financialreports.eu/financialreports/media/filings/3572/2025/RNS/3572_rns_2025-08-15_4366e4cd-c795-4432-8096-492306d17512.pdf">投资者演示</a></p></article>
+        <article class="channel"><span class="channel-label">DTC</span><h3>设备、激活、续费是一条漏斗</h3><p>COSMO、Gabb、myFirst、Spacetalk 与 Xplora 都自建销售/激活页面。</p><p class="finding">结论：独立站是套餐转化、客服和复购的核心，不只是品牌展示。</p></article>
+        <article class="channel"><span class="channel-label">TIKTOK SHOP</span><h3>有上架，缺少公开可审计 GMV</h3><p>公开搜索可见 LAGENIO K9 AI 表，也能检索 COSMO JrTrack 与 Xplora X6Play。</p><p class="finding">结论：适合内容获客和验证创意；公开页面不能证明 GMV、退款或达人归因。<a href="https://shop.tiktok.com/us/k/smartwatch-for-kids">搜索页</a></p></article>
+        <article class="channel"><span class="channel-label">SHOPEE / LAZADA</span><h3>东南亚需要本地化渠道矩阵</h3><p>myFirst 的区域版本覆盖新加坡、马来西亚、泰国、菲律宾、越南等地。</p><p class="finding">结论：需同时看平台、DTC、运营商和线下，不可套用美国渠道模型。<a href="https://sg.myfirst.tech/products/myfirst-fone-s3">支持区域</a></p></article>
+      </div>
+
+      <div class="sorftime">
+        <div>
+          <p class="eyebrow">SORFTIME / VERIFIED STATUS</p>
+          <h3>本次已发起数据调用，但当前账号授权失效</h3>
+          <div class="code">sorftime api ProductSearch<br>'{"attributeName":"kids smartwatch","page":1,<br>"priceRangeMin":40,"priceRangeMax":350}' --domain 1</div>
+          <div class="warning"><strong>返回：HTTP 401。</strong> 未返回商品、销量或关键词数据。本报告没有伪造或估算 Sorftime 销量。</div>
+        </div>
+        <div>
+          <h3>授权恢复后的数据任务</h3>
+          <ol style="margin:0;padding-left:20px;font-size:13px">
+            <li>Amazon US/UK/DE：导出前 50 个 ASIN 的价格、月销量、销售额、评论、BSR；用 AsinSalesVolume 核验公开子体销量。</li>
+            <li>Shopee SG/TH/MY/VN：取儿童表细分类目 Top 500，拉近 30 日销量、销售额、价格、店铺与趋势。</li>
+            <li>TikTok Shop：必须用 TikTok 授权数据工具或 Seller Center 导出 GMV、退款、达人、视频 URL 与归因。</li>
+          </ol>
+          <p class="finding">Sorftime 当前 CLI 上线接口为 Amazon、Shopee、Walmart；没有可调用的 TikTok GMV/达人端点。<a href="https://github.com/sorftime/sorftime-cli">CLI 文档</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sorftime-framework" class="section">
+      <div class="section-head"><span class="section-no">04 / SORFTIME</span><div><h2>Sorftime 四维选品法：先判断是否值得做，再决定在哪做</h2><p class="section-intro">采用 Sorftime 常用的四项判断：市场容量、竞争强度、利润空间、生命周期；这里将“竞争强度”转换为对新品牌更直观的“进入友好度”。</p></div></div>
+
+      <div class="data-board">
+        <div class="data-hero">
+          <div>
+            <p class="eyebrow">XIAOZHI / INVESTMENT GATE</p>
+            <span class="big-number">3.4 / 5</span>
+            <span class="big-label">综合机会分：建议 <strong>Go with guardrails</strong> —— 可启动受控验证，但不能把 AI 当作单独的需求引擎。</span>
+          </div>
+          <div class="data-source">
+            <span class="source-grade">JUDGEMENT / 研究判断</span><br>
+            得分并非市场统计值，而是将公开财报、价格、渠道和合规门槛归一后的立项判断。高分代表对小智更有利；每个结论均保留其证据边界。
+          </div>
+        </div>
+      </div>
+
+      <div class="sorftime-grid">
+        <article class="dimension">
+          <h3>01 市场容量</h3><span class="score">4.0</span>
+          <div class="score-line" aria-label="4 out of 5"><i class="active"></i><i class="active"></i><i class="active"></i><i class="active"></i><i></i></div>
+          <p>美国与欧洲已有可见的广义儿童表量级、运营商和订阅供给。东南亚绝对规模与支付深度尚需逐国实测。</p>
+        </article>
+        <article class="dimension">
+          <h3>02 进入友好度</h3><span class="score">2.0</span>
+          <div class="score-line" aria-label="2 out of 5"><i class="active"></i><i class="active"></i><i></i><i></i><i></i></div>
+          <p>美国被 Verizon、Gabb、COSMO、TickTalk 占据；欧洲有 Xplora 和本地 SIM 生态。连接、客服与合规形成真实门槛。</p>
+        </article>
+        <article class="dimension">
+          <h3>03 利润空间</h3><span class="score">3.5</span>
+          <div class="score-line" aria-label="3.5 out of 5"><i class="active"></i><i class="active"></i><i class="active"></i><i class="half"></i><i></i></div>
+          <p>首年总价约 US$235–420+ 证明付费意愿；但蜂窝、云端 AI、客服、退货、认证和获客会吞掉硬件毛利。</p>
+        </article>
+        <article class="dimension">
+          <h3>04 生命周期</h3><span class="score">4.0</span>
+          <div class="score-line" aria-label="4 out of 5"><i class="active"></i><i class="active"></i><i class="active"></i><i class="active"></i><i></i></div>
+          <p>“第一台手机替代品”仍在扩张，且头部公司持续迭代。AI 是早期增值层，须验证留存和续费，不能假设其自动放大市场。</p>
+        </article>
+      </div>
+      <p class="note"><strong>四维结论：</strong>需求真实、持续服务可盈利、但新品牌的主要风险是连接与信任，不是做不出硬件。第一阶段应卖“安全连接 + 家长控制 + 受控 AI”，以激活、续费和退款后贡献毛利来否决或放大项目。</p>
+
+      <div class="charts">
+        <article class="chart">
+          <p class="eyebrow">PUBLIC COMPANY / Q4 2025</p>
+          <h3>Xplora：服务与激活优于硬件出货</h3>
+          <small>柱长为本组指标的相对展示；右侧为同比变化。不是把不同单位直接相加或比较。</small>
+          <div class="bar-set">
+            <div class="bar-row"><span>年末订阅 476k</span><span class="bar-track"><i class="bar-fill" style="width:94%"></i></span><b><span class="delta">+33%</span></b></div>
+            <div class="bar-row"><span>Q4 服务收入 NOK91.4m</span><span class="bar-track"><i class="bar-fill" style="width:78%"></i></span><b><span class="delta">+19%</span></b></div>
+            <div class="bar-row"><span>Q4 首次激活 135k</span><span class="bar-track"><i class="bar-fill" style="width:67%"></i></span><b><span class="delta">+12.5%</span></b></div>
+            <div class="bar-row"><span>Q4 设备出货 162k</span><span class="bar-track"><i class="bar-fill orange" style="width:81%"></i></span><b><span class="delta down">−3%</span></b></div>
+          </div>
+          <p class="note">读法：设备并非唯一增长引擎。小智要盯住“激活 → 服务转化 → 留存”，而不是只盯出货。</p>
+        </article>
+        <article class="chart">
+          <p class="eyebrow">PUBLIC COMPANY / FY 2025</p>
+          <h3>Spacetalk：连接收入成为增长引擎</h3>
+          <small>柱长为本组指标的相对展示；右侧为同比变化。FY 月均只是全年平均，不代表任一自然月。</small>
+          <div class="bar-set">
+            <div class="bar-row"><span>移动收入 A$6.96m</span><span class="bar-track"><i class="bar-fill" style="width:70%"></i></span><b><span class="delta">+53.8%</span></b></div>
+            <div class="bar-row"><span>付费移动用户 44.4k</span><span class="bar-track"><i class="bar-fill" style="width:89%"></i></span><b><span class="delta">+44%</span></b></div>
+            <div class="bar-row"><span>ARR A$12.1m</span><span class="bar-track"><i class="bar-fill" style="width:92%"></i></span><b><span class="delta">+25%</span></b></div>
+            <div class="bar-row"><span>设备收入 A$8.31m</span><span class="bar-track"><i class="bar-fill orange" style="width:83%"></i></span><b><span class="delta">+1.6%</span></b></div>
+          </div>
+          <p class="note">读法：连接套餐的增速显著快于设备。AI 服务若要收费，应进入套餐价值，而非另建低留存 App。</p>
+        </article>
+      </div>
+
+      <div class="matrix-card">
+        <p class="eyebrow">MARKET PRIORITIZATION / 2026–2027</p>
+        <h3>目标市场四象限：容量 × 进入可行性</h3>
+        <p class="section-intro">进入可行性综合考虑本地化、蜂窝方案、合规、渠道与售后，并不等于竞争少。每个点是策略定位，不是市场规模或 GMV 的精确测量。</p>
+        <div class="matrix" role="img" aria-label="美国、德国北欧、英国、新加坡、泰国马来西亚、印尼越南的市场容量和进入可行性矩阵">
+          <span class="quad-label q1">优先，但门槛高</span><span class="quad-label q2">长线攻坚</span><span class="quad-label q3">暂缓进入</span><span class="quad-label q4">低成本验证</span>
+          <span class="dot orange" style="left:31%;top:18%">美国</span>
+          <span class="dot orange" style="left:43%;top:27%">德国 / 北欧</span>
+          <span class="dot" style="left:54%;top:39%">英国</span>
+          <span class="dot yellow" style="left:80%;top:58%">新加坡</span>
+          <span class="dot yellow" style="left:70%;top:70%">泰国 / 马来西亚</span>
+          <span class="dot outline" style="left:76%;top:84%">印尼 / 越南</span>
+        </div>
+        <p class="note"><strong>行动含义：</strong>美国只做具备运营商/合规条件的商业试点；德国/北欧作为第二阶段；新加坡用来验证产品、套餐与客服；泰马先确认 eSIM、价格带和渠道后再扩张；印尼/越南先做调研和本地合作可行性，不直接备货。</p>
+      </div>
+    </section>
+
+    <section id="top10" class="section">
+      <div class="section-head"><span class="section-no">05 / TOP 10</span><div><h2>跨境品牌 Top 10：经营数据、月均口径与增长板块</h2><p class="section-intro">这是竞争优先级清单，而不是销量排名。公开月销量只存在于极少数上市公司披露中；其余品牌必须诚实标记为“未披露”。</p></div></div>
+      <p class="note"><strong>数据纪律：</strong>A = 审计/监管披露；B = 公司或创始人口径；C = 未披露。所有“月均”都是已披露季度或年度总额除以 3 或 12 的期间平均，绝不是某个自然月的实际结算值。</p>
+
+      <div class="evidence-panel">
+        <p class="eyebrow">TOP 10 / OPERATING SIGNAL MAP</p>
+        <h3>所有品牌的经营信号：有多少数据可以真正用于决策？</h3>
+        <p>横条是<strong>证据完备度</strong>，不是把订阅、营收、家庭数、通话次数等不同单位伪装成可比较的销量。右侧保留每个品牌可获得的最新经营或使用信号；没有公开数据的品牌，条形图明确显示为“未披露”。</p>
+        <div class="evidence-legend"><span>A / 审计或交易所披露</span><span>B / 公司、媒体或运营信号</span><span>C / 无可审计经营数据</span></div>
+        <div class="brand-data-list">
+          <div class="brand-data-row"><strong>Xplora</strong><span class="evidence-track"><i style="width:100%"></i></span><span class="signal">476k 年末订阅；Q4 服务收入 NOK91.4m；Q4 激活 135k</span><b class="grade">A</b></div>
+          <div class="brand-data-row"><strong>Spacetalk</strong><span class="evidence-track"><i style="width:100%"></i></span><span class="signal">44.4k 付费移动用户；FY 移动收入 A$6.96m；ARR A$12.1m</span><b class="grade">A</b></div>
+          <div class="brand-data-row"><strong>myFirst</strong><span class="evidence-track"><i class="company" style="width:67%"></i></span><span class="signal">创始人口径：2024 销售额 20m；新加坡约 20k 活跃儿童账户</span><b class="grade b">B</b></div>
+          <div class="brand-data-row"><strong>TickTalk</strong><span class="evidence-track"><i class="company" style="width:67%"></i></span><span class="signal">公司称 500k+ 家庭信任；未披露营收、激活或月销量</span><b class="grade b">B</b></div>
+          <div class="brand-data-row"><strong>COSMO</strong><span class="evidence-track"><i class="company" style="width:67%"></i></span><span class="signal">每月 1.8m+ 通话拦截；累计 300m+ 消息（均为使用量）</span><b class="grade b">B</b></div>
+          <div class="brand-data-row"><strong>Verizon Gizmo</strong><span class="evidence-track"><i class="company" style="width:67%"></i></span><span class="signal">约 3.3m 通话/月（消费者报告转述）；未披露设备收入</span><b class="grade b">B</b></div>
+          <div class="brand-data-row"><strong>Gabb</strong><span class="evidence-track"><i class="company" style="width:56%"></i></span><span class="signal">公司称 2024 “record sales”；无公开金额、销量或活跃设备</span><b class="grade b">B</b></div>
+          <div class="brand-data-row"><strong>Garmin Bounce</strong><span class="evidence-track"><i class="company" style="width:56%"></i></span><span class="signal">母公司 Fitness FY25 收入 US$2.357bn；儿童表不单独披露</span><b class="grade b">B</b></div>
+          <div class="brand-data-row"><strong>Fitbit Ace LTE</strong><span class="evidence-track"><i class="none" style="width:33%"></i></span><span class="signal">硬件与 Ace Pass 在售；Alphabet 不披露产品线数据</span><b class="grade c">C</b></div>
+          <div class="brand-data-row"><strong>Apple Watch</strong><span class="evidence-track"><i class="none" style="width:33%"></i></span><span class="signal">Family Setup 在售；Apple 不拆分儿童/手表收入及销量</span><b class="grade c">C</b></div>
+        </div>
+        <p class="note"><strong>决策用法：</strong>优先以 Xplora、Spacetalk 的服务化指标构建商业模型；私营竞品只用于产品、价格和渠道监控。恢复 Sorftime 权限后，Amazon 与 Shopee 可补上商品级月销量，TikTok 仍需授权的 Seller Center / 第三方归因数据。</p>
+      </div>
+
+      <div class="growth-space">
+        <article class="growth-card">
+          <p class="eyebrow">BRAND GROWTH HEADROOM / 研究判断</p>
+          <h3>Top 10：未来 24 个月增长空间</h3>
+          <p>评分衡量可拓展渠道、订阅渗透、新地区、产品代际与服务层空间；不是对营收增速的预测。</p>
+          <div class="space-row"><span>Spacetalk</span><span class="space-track"><i style="width:90%"></i></span><b>4.5</b></div>
+          <div class="space-row"><span>Xplora</span><span class="space-track"><i style="width:80%"></i></span><b>4.0</b></div>
+          <div class="space-row"><span>myFirst</span><span class="space-track"><i style="width:80%"></i></span><b>4.0</b></div>
+          <div class="space-row"><span>TickTalk / Gabb</span><span class="space-track"><i style="width:70%"></i></span><b>3.5</b></div>
+          <div class="space-row"><span>COSMO / Fitbit</span><span class="space-track"><i style="width:60%"></i></span><b>3.0</b></div>
+          <div class="space-row"><span>Garmin</span><span class="space-track"><i style="width:50%"></i></span><b>2.5</b></div>
+          <div class="space-row"><span>Verizon / Apple</span><span class="space-track"><i style="width:40%"></i></span><b>2.0</b></div>
+        </article>
+        <article class="growth-card dark">
+          <p class="eyebrow" style="color:#f8cf5e">WHERE XIAOZHI CAN WIN</p>
+          <h3>小智的相对增长空间</h3>
+          <p>不是与 Apple/Verizon 争存量硬件，而是进入其薄弱或尚未被量化的价值环节。</p>
+          <div class="space-row"><span>安全 AI 留存层</span><span class="space-track"><i style="width:90%"></i></span><b>4.5</b></div>
+          <div class="space-row"><span>家长总结 / 协同</span><span class="space-track"><i style="width:80%"></i></span><b>4.0</b></div>
+          <div class="space-row"><span>东南亚本地化</span><span class="space-track"><i style="width:70%"></i></span><b>3.5</b></div>
+          <div class="space-row"><span>Wi‑Fi 低门槛试用</span><span class="space-track"><i style="width:70%"></i></span><b>3.5</b></div>
+          <div class="space-row"><span>美国运营商硬碰硬</span><span class="space-track"><i style="width:30%"></i></span><b>1.5</b></div>
+        </article>
+      </div>
+
+      <div class="section-head" style="margin-top:42px"><span class="section-no">PRODUCT / LINKS</span><div><h2>Top 10 产品首图、目标人群与官方跳转</h2><p class="section-intro">首图均来自品牌官方产品页的公开社交首图或官方支持页面；点击“产品页”可复核当期规格与价格。</p></div></div>
+      <div class="product-grid">
+        <article class="product-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://shop.myxplora.com/cdn/shop/files/Social_Sharing_Image_Default_-_1200_x_628_px.png?v=1740129997" alt="Xplora X6Play"><div class="product-card-body"><span class="region">EUROPE / XPLORA</span><h3>X6Play</h3><p>6–11 岁；安全通信、定位、儿童首块蜂窝表。</p><div class="tag-row"><span>家长控制</span><span>运营商</span></div><a target="_blank" rel="noopener" href="https://myxplora.com/products/x6play">产品页</a></div></article>
+        <article class="product-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://cdn.shopify.com/s/files/1/1695/3443/files/TickTalk-5-kids-cellular-smartwatch-blue-home-screen-interface_2e95538f-fdd8-4724-9f2c-420a3ed6e04f.webp?v=1752652832" alt="TickTalk 5"><div class="product-card-body"><span class="region">USA / TICKTALK</span><h3>TickTalk 5</h3><p>5–12 岁；白名单通信、安全与低分心定位。</p><div class="tag-row"><span>蜂窝</span><span>安全优先</span></div><a target="_blank" rel="noopener" href="https://www.myticktalk.com/products/ticktalk-5">产品页</a></div></article>
+        <article class="product-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://cosmotogether.com/cdn/shop/files/JT3_JT4_JT5_Main_Images_14.jpg?v=1765297051" alt="COSMO JrTrack 5"><div class="product-card-body"><span class="region">USA / COSMO</span><h3>JrTrack 5</h3><p>儿童与青少年早期；通信、GPS 与反骚扰。</p><div class="tag-row"><span>蜂窝</span><span>白名单</span></div><a target="_blank" rel="noopener" href="https://cosmotogether.com/products/jrtrack-5">产品页</a></div></article>
+        <article class="product-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://ss7.vzw.com/is/image/VerizonWireless/gizmo-watch-3-vz-1235158-3-blue" alt="Verizon Gizmo Watch 3"><div class="product-card-body"><span class="region">USA / VERIZON</span><h3>Gizmo Watch 3</h3><p>儿童第一台通信设备；运营商家庭账户用户。</p><div class="tag-row"><span>运营商</span><span>家庭套餐</span></div><a target="_blank" rel="noopener" href="https://www.verizon.com/connected-smartwatches/verizon-gizmo-watch-3/">产品页</a></div></article>
+        <article class="product-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://gabb.com/wp-content/uploads/2025/10/calling-mom-watch-large.png" alt="Gabb Watch 3e"><div class="product-card-body"><span class="region">USA / GABB</span><h3>Gabb Watch 3e</h3><p>6–12 岁；延后给手机、强调无社交媒体。</p><div class="tag-row"><span>安全手机替代</span><span>蜂窝</span></div><a target="_blank" rel="noopener" href="https://gabb.com/products/gabb-watch-3">产品页</a></div></article>
+        <article class="product-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://res.garmin.com/en/products/010-03399-00/v/cf-lg.jpg" alt="Garmin Bounce 2"><div class="product-card-body"><span class="region">USA / GARMIN</span><h3>Bounce 2</h3><p>活动型儿童与家长；LTE 通信、位置、运动。</p><div class="tag-row"><span>LTE</span><span>运动</span></div><a target="_blank" rel="noopener" href="https://www.garmin.com/en-US/p/1815501/pn/010-03399-00/">产品页</a></div></article>
+        <article class="product-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/GlerByLrhKXELgRLQEb9L9qH304z5x-XzWuu6I3h_rMVAJJyaU07303bh5DCNJsFT5V8nzu93bWgwsFUSTNZXUuAz-J8b-IObA=rw-rj-sc0xffffffff" alt="Fitbit Ace LTE"><div class="product-card-body"><span class="region">USA / GOOGLE</span><h3>Fitbit Ace LTE</h3><p>7 岁+；游戏化活动、定位与家庭订阅。</p><div class="tag-row"><span>Ace Pass</span><span>游戏化</span></div><a target="_blank" rel="noopener" href="https://store.google.com/product/fitbit_ace_lte?hl=en-US">产品页</a></div></article>
+        <article class="product-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://sg.myfirst.tech/cdn/shop/files/4115_SfyPC_R2-AB4.png?v=1778747604" alt="myFirst Fone R2"><div class="product-card-body"><span class="region">SEA / MYFIRST</span><h3>Fone R2</h3><p>东南亚家庭；视频通话、定位、儿童社交圈。</p><div class="tag-row"><span>eSIM</span><span>区域化</span></div><a target="_blank" rel="noopener" href="https://sg.myfirst.tech/products/myfirst-fone-r2">产品页</a></div></article>
+        <article class="product-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://spacetalk.co/cdn/shop/files/1._Loop_-_Frost.png?v=1778845183" alt="Spacetalk Loop"><div class="product-card-body"><span class="region">SEA / SPACETALK</span><h3>Loop</h3><p>儿童首块表；定位、上课模式、SOS 与连接套餐。</p><div class="tag-row"><span>4G</span><span>订阅</span></div><a target="_blank" rel="noopener" href="https://spacetalk.co/en-sg/products/loop-smartwatch-no-sim">产品页</a></div></article>
+        <article class="product-card"><img loading="lazy" referrerpolicy="no-referrer" src="https://help.apple.com/assets/692F45642C5AEF37BA06084A/692F4568B3C902EE690E2EBC/en_US/90b941248bf4ac717658fb2609d18e18.png" alt="Apple Watch Family Setup"><div class="product-card-body"><span class="region">GLOBAL / APPLE</span><h3>Watch + Family Setup</h3><p>高支付力家庭；孩子不配 iPhone 也可使用蜂窝表。</p><div class="tag-row"><span>高端替代品</span><span>Family Setup</span></div><a target="_blank" rel="noopener" href="https://support.apple.com/guide/watch/set-up-apple-watch-for-your-kids-apd54d0a51fb/watchos">产品页</a></div></article>
+      </div>
+      <div class="table-wrap" style="margin-top:20px">
+        <table>
+          <thead><tr><th>优先级</th><th>品牌</th><th>最新经营 / 销量信号</th><th>月均或月度运营信号</th><th>增长板块</th><th>证据</th></tr></thead>
+          <tbody>
+            <tr><td>01</td><td>Xplora</td><td>2025 Q4：Kids & Youth 收入 NOK245.3m；设备出货 162k；首次激活 135k；服务收入 NOK91.4m；订阅 476k。</td><td>Q4 月均：收入 NOK81.8m；出货 54k；激活 45k；服务收入 NOK30.5m。</td><td>服务收入 +19%、订阅 +33%、激活 +12.5%；硬件出货 -3%。增长来自服务与毛利，不是硬件量。</td><td>A<br><a href="https://storage.mfn.se/cad5b9f2-198b-4950-8d7b-5714054d3eed/xplora-q4-2025-report.pdf">Q4 报告</a></td></tr>
+            <tr><td>02</td><td>Spacetalk</td><td>FY2025：收入 A$19.6m；经常性收入 A$11.234m；Mobile A$6.957m；设备 A$8.313m；付费移动用户 44.4k。</td><td>FY 月均：收入 A$1.63m；经常性收入 A$0.94m；ARR 对应 A$1.01m/月运行率。</td><td>Mobile +54%、付费移动用户 +44%、ARR +25%；App -16%、设备 +2%。连接捆绑是增长引擎。</td><td>A<br><a href="https://announcements.asx.com.au/asxpdf/20250930/pdf/06px5zdnhqmztt.pdf">年报</a></td></tr>
+            <tr><td>03</td><td>myFirst / OAXIS</td><td>创始人对媒体称 2024 年销售额 20m（未审计），自 2022 年起每年翻倍；新加坡约 20k 活跃儿童表账户。</td><td>按全年粗分约 1.67m/月；币种与审计状态待公司确认。</td><td>区域 eSIM、语言和渠道覆盖优先于单品销量；应追踪区域活跃账户与连接转化。</td><td>B<br><a href="https://www.straitstimes.com/singapore/parents-turn-to-smartwatches-for-their-children-amid-global-phone-screen-time-pushback">媒体报道</a></td></tr>
+            <tr><td>04</td><td>TickTalk</td><td>公司称 500k+ 家庭信任，2026 年将推第 6 代；未披露营收、活跃设备或月销量。</td><td>无可审计月销量。</td><td>高频产品迭代与“无开放互联网”安全叙事强；监测预售、套餐、Amazon 排名。</td><td>B<br><a href="https://www.myticktalk.com/pages/ticktalk-media">公司资料</a></td></tr>
+            <tr><td>05</td><td>COSMO</td><td>公司披露累计 300m+ 消息、91m+ 影像/时刻；称服务数万家庭。</td><td>每月拦截 1.8m+ 次呼叫；这是使用量，不是销量。</td><td>白名单与反骚扰是可量化的安全服务，不应被 AI 聊天取代。</td><td>B<br><a href="https://cosmotogether.com/">公司首页</a></td></tr>
+            <tr><td>06</td><td>Verizon Gizmo</td><td>Gizmo Watch 3 约 2.9k 条公开评论；未拆分营收或销量。</td><td>Verizon 消费者报告称 Gizmo 用户约 3.3m 通呼/月；非设备销量。</td><td>运营商连接与家庭账号是护城河，要求小智先具备 MVNO/eSIM 能力。</td><td>B<br><a href="https://www.axios.com/sponsored/tech-trends-and-touchdowns-the-future-of-digital-connectivity">消费者报告转述</a></td></tr>
+            <tr><td>07</td><td>Gabb</td><td>私营公司未披露销售额/销量；官方称 2024 有“record sales”，产品已进 DTC、Amazon、Walmart。</td><td>无可验证月销量。</td><td>向手机、音乐、Messenger、内容过滤扩张，意图提升家庭 LTV。</td><td>B/C<br><a href="https://www.businesswire.com/news/home/20250107516811/en/Gabb-Features-Newest-Kid-Safe-Tech-at-Digital-Experience-PepCom-at-CES-2025">公司新闻</a></td></tr>
+            <tr><td>08</td><td>Garmin</td><td>FY2025 Fitness 分部收入 US$2.357bn，+33%；未披露 Bounce 儿童表收入/销量。</td><td>Fitness 分部月均 US$196.4m，不能分配给 Bounce。</td><td>大公司投入能力强；不能把 Fitness 增长误判为儿童表需求。</td><td>A / C<br><a href="https://www8.garmin.com/aboutGarmin/invRelations/reports/2025_Annual_Report.pdf">年报</a></td></tr>
+            <tr><td>09</td><td>Google Fitbit</td><td>Ace LTE 独立销售硬件和 Ace Pass；Alphabet 不披露 Fitbit/Ace 经营数据。</td><td>无可验证月销量。</td><td>游戏 + 定位 + LTE 套餐是订阅模型参考，重点看留存而非硬件价。</td><td>C</td></tr>
+            <tr><td>10</td><td>Apple Watch for Your Kids</td><td>Apple 不拆分 Watch、Family Setup 或儿童表营收/销量。</td><td>无可验证月销量。</td><td>高端替代品；关注运营商家庭套餐、家长控制与二手 SE 价格。</td><td>C</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="split" style="margin-top:20px">
+        <article class="good">
+          <p class="eyebrow" style="color:#0f6c51">OPERATING PATTERN / XPLORA</p>
+          <h3>硬件不增长，服务仍然可以增长</h3>
+          <ul>
+            <li>Q4 设备出货同比 -3%，首次激活却同比 +12.5%。</li>
+            <li>服务收入同比 +19%，年末订阅同比 +33%，毛利率提高至 52%。</li>
+            <li>移动订阅、Premium、B2B 和服务费共同构成 476k 订阅底盘。</li>
+            <li><strong>小智看板：</strong>终端激活 → 连接/服务转化 → 月活与留存 → 退款后毛利。</li>
+          </ul>
+        </article>
+        <article class="avoid">
+          <p class="eyebrow" style="color:#b34d2b">OPERATING PATTERN / SPACETALK</p>
+          <h3>连接捆绑正在取代单独 App 收入</h3>
+          <ul>
+            <li>Mobile 收入 +53.8%，付费移动用户 +44%，ARR +25%。</li>
+            <li>单独 Apps 收入 -16.3%，设备收入仅 +1.6%。</li>
+            <li>经常性收入占总收入升至 57%。</li>
+            <li><strong>小智启示：</strong>优先卖“设备 + 连接 + 安全/AI 服务”，而不是把 App 当独立利润中心。</li>
+          </ul>
+        </article>
+      </div>
+      <p class="note"><strong>不能专业填充的数据：</strong>Gabb、COSMO、TickTalk、myFirst、Verizon Gizmo、Fitbit Ace LTE、Apple Family Setup 的按月设备销量、按月 GMV、Amazon 按月销量、TikTok 按月 GMV/退款/达人归因均未公开或不能审计。恢复 Sorftime 授权后，先抓 Amazon US/UK/DE 与 Shopee SG/TH/MY/VN；TikTok 必须另接有授权的数据源。</p>
+    </section>
+
+    <section id="model" class="section">
+      <div class="section-head"><span class="section-no">06 / MODEL</span><div><h2>价格与连接：蜂窝不是唯一模式，Wi‑Fi 也不是低配版</h2><p class="section-intro">以下为公开价格快照；不含税、促销和运营商激活费。小智需要把“在哪儿能连接、谁为连接付费”设计为产品分层。</p></div></div>
+      <div class="price-grid">
+        <div class="price"><b>COSMO JrTrack 5</b><span class="money">$235</span><small>首年约：$79.99 + 年付等价 $12.99/月</small></div>
+        <div class="price"><b>Verizon Gizmo 3</b><span class="money">$270+</span><small>首年约：$149.99 + $10/月，另计激活费</small></div>
+        <div class="price"><b>Gabb Watch 3e</b><span class="money">$306–366</span><small>首年约：$149.99 + $12.99–17.99/月</small></div>
+        <div class="price"><b>Fitbit Ace LTE</b><span class="money">$300</span><small>首年约：$179.99 + $9.99/月</small></div>
+        <div class="price"><b>Garmin Bounce 2</b><span class="money">$420+</span><small>首年约：$299.99 + $9.99/月起</small></div>
+      </div>
+      <p class="note"><strong>小智待验证价格假设：</strong>US$149–199 硬件 + US$8.99–12.99/月。只有把蜂窝连接、云端 AI 安全、客服、保修、退款与获客成本全部计入后，贡献毛利仍为正，才值得放大。</p>
+      <div class="connection-grid">
+        <article class="connection-card">
+          <p class="eyebrow">CELLULAR / eSIM · NANO-SIM</p>
+          <h3>蜂窝版：安全连接的主产品</h3>
+          <ul>
+            <li><strong>目标人群：</strong>6–12 岁、通勤/校外活动多、父母需要随时定位与 SOS 的家庭。</li>
+            <li><strong>核心价值：</strong>离开家庭 Wi‑Fi 后仍可通话、消息、位置刷新和紧急求助。</li>
+            <li><strong>商业化：</strong>硬件 + 月费连接 + 安全/AI 服务，最符合欧美已验证的订阅模型。</li>
+            <li><strong>风险：</strong>MVNO/eSIM、漫游、911/SOS、账单、网络覆盖、客服和续费流失均是运营能力。</li>
+          </ul>
+          <span class="position">建议：美国/欧洲的首发 SKU 以蜂窝为主；没有合规连接伙伴，不进入大货阶段。</span>
+        </article>
+        <article class="connection-card wifi">
+          <p class="eyebrow">WIFI / PAIRED OR HOME-FIRST</p>
+          <h3>Wi‑Fi 版：低门槛验证与家庭陪伴层</h3>
+          <ul>
+            <li><strong>目标人群：</strong>4–8 岁、主要在家/学校/固定场所活动，或价格敏感、暂不愿开月费的家庭。</li>
+            <li><strong>核心价值：</strong>家庭 Wi‑Fi 下的语音提醒、受控 AI 问答、习惯养成、亲子任务与视频/语音消息。</li>
+            <li><strong>商业化：</strong>较低硬件价或以 AI 家庭会员收费；适合东南亚早期需求测试与内容获客。</li>
+            <li><strong>边界：</strong>无公网蜂窝时不能承诺户外连续定位、可靠 SOS 或独立通话；必须在产品页醒目说明。</li>
+          </ul>
+          <span class="position">建议：作为“家庭 Wi‑Fi / 蓝牙陪伴版”独立 SKU，而不是削减版蜂窝表；可升级至 eSIM 方案。</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="product" class="section">
+      <div class="section-head"><span class="section-no">07 / PRODUCT</span><div><h2>小智应该卖什么，而不该卖什么</h2><p class="section-intro">AI 需要降低父母焦虑、提高家庭效率，而不是增加新的风险入口。</p></div></div>
+      <div class="split">
+        <article class="good"><p class="eyebrow" style="color:#0f6c51">BUILD THIS</p><h3>第一台手机替代品</h3><ul><li>白名单通话、定位、安全区、SOS、上课模式：购买理由。</li><li>语音提醒、到家签到、受控学习问答、家庭任务/奖励：AI 留存层。</li><li>父母可解释摘要、权限、删除入口：家长端价值。</li><li>6–9 岁安全/奖励优先；10–12 岁再增加有限学习和表达。</li></ul></article>
+        <article class="avoid"><p class="eyebrow" style="color:#b34d2b">DO NOT PROMISE</p><h3>开放式儿童 AI 聊天</h3><ul><li>不承诺全知全能陪伴、心理或医疗建议。</li><li>不开放陌生人社交、内容广场、任意图片/GIF 上传。</li><li>不以儿童定位、音频、对话做广告画像或模型训练。</li><li>不让 AI 的新奇感凌驾于续航、定位、连接和客服可靠性之上。</li></ul></article>
+      </div>
+      <div class="ai-case">
+        <article><p class="eyebrow">OPPORTUNITY 01</p><span class="score">4.5</span><h3>把 AI 变成家长端留存</h3><p>将接送提醒、到家签到、异常位置提示、每日摘要、任务激励做成可解释的“家庭助手”。家长看见结果，才会持续支付订阅。</p></article>
+        <article><p class="eyebrow">OPPORTUNITY 02</p><span class="score">4.0</span><h3>受控学习与表达</h3><p>用年级/白名单内容、时间窗、答案置信度和家长可见记录，为 6–12 岁提供短轮次问答、故事和语言练习，而非无限对话。</p></article>
+        <article><p class="eyebrow" style="color:#b34d2b">RISK / MUST SOLVE</p><span class="score" style="color:#b34d2b">HIGH</span><h3>儿童数据与错误回答</h3><p>定位、语音和儿童对话是高敏感数据；幻觉、不当内容、旁路绕过、家长误解 SOS 可靠性都会直接损害品牌。须默认最小采集、内容防护、人工升级与可删除机制。</p></article>
+      </div>
+      <p class="note"><strong>小智 AI 的可行性判断：</strong>机会在“安全连接之后的高频家庭协同”，不是把大模型装进表里。先用 Wi‑Fi / 蜂窝双路径验证家长第 30 天留存、AI 功能使用率、投诉率和续费；任一儿童安全或隐私重大事件都应触发停售与复盘，而不是用增长抵消。</p>
+    </section>
+
+    <section id="compliance" class="section">
+      <div class="section-head"><span class="section-no">08 / COMPLIANCE</span><div><h2>合规是立项前置条件，不是上线后补丁</h2><p class="section-intro">儿童的精确位置、语音、视频和行为数据属于最敏感的产品资产之一。</p></div></div>
+      <div class="compliance">
+        <article class="legal"><h3>美国 / COPPA</h3><p>联网设备、语音助手和位置服务均可能受 COPPA 约束；精确位置、儿童音频/视频属于受保护个人信息。</p><p><strong>产品动作：</strong>可验证家长同意、定位/语音最小化、SDK 审计、数据删除；不做广告画像。</p><a href="https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions">FTC 指引</a></article>
+        <article class="legal"><h3>欧盟 / GDPR</h3><p>以同意为基础处理儿童数据时，父母同意门槛按成员国为 13–16 岁；需考虑跨境传输与数据处理协议。</p><p><strong>产品动作：</strong>首发国家逐个确认年龄、监护人验证、DPIA 与数据地图。</p><a href="https://commission.europa.eu/law/law-topic/data-protection/information-business-and-organisations/legal-grounds-processing-data/are-there-any-specific-safeguards-data-about-children_en">欧盟说明</a></article>
+        <article class="legal"><h3>英国 / Children’s Code</h3><p>要求高隐私默认、最小化收集；儿童定位默认关闭或须能证明符合最佳利益，且孩子需知道自己正被追踪。</p><p><strong>产品动作：</strong>把定位提示和儿童知情做进交互，不能只写在隐私政策里。</p><a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/">ICO 指引</a></article>
+      </div>
+      <p class="note"><strong>硬件合规同样必要：</strong>FCC（美国）或 RED/CE、RoHS、WEEE、电池、GPSR（欧盟）和 UN 38.3 锂电运输文件。测试证书必须和最终 BOM、天线、固件、充电器、批次一致。</p>
+    </section>
+
+    <section id="roadmap" class="section">
+      <div class="section-head"><span class="section-no">09 / EXECUTION</span><div><h2>先证明连接与订阅，再放大市场</h2><p class="section-intro">如果团队只有硬件供应链，无法做到 eSIM/MVNO、儿童数据治理和客服，不应先进入美国或欧洲。</p></div></div>
+      <div class="roadmap">
+        <ol class="steps">
+          <li><b>美国商业化试点</b><span>完成运营商/eSIM、911/SOS 责任边界与 COPPA 后，做 500–1,000 台小批量商业试点。</span></li>
+          <li><b>德国 / 北欧第二阶段</b><span>在运营商或零售合作、GDPR、当地语言与售后准备完成后进入。</span></li>
+          <li><b>新加坡产品验证</b><span>以较低成本验证配对、定位、资费与客服；再决定是否扩泰国/马来西亚。</span></li>
+        </ol>
+        <aside class="metrics">
+          <p class="eyebrow" style="color:#f8cf5e">90-DAY GATES</p>
+          <h3>放量前的硬门槛</h3>
+          <div class="metric-row"><span>48 小时内完成家长绑定</span><b>≥ 85%</b></div>
+          <div class="metric-row"><span>第 30 天仍有周活跃家庭</span><b>≥ 60%</b></div>
+          <div class="metric-row"><span>试用转付费</span><b>≥ 35%</b></div>
+          <div class="metric-row"><span>高风险内容 / 隐私事件未处置</span><b>0</b></div>
+          <div class="metric-row"><span>退款后贡献毛利</span><b>正值</b></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><span class="section-no">10 / SOURCES</span><div><h2>主要证据与复查入口</h2><p class="section-intro">所有电商数据均应在下次评审时按抓取日期复核。</p></div></div>
+      <div class="sources">
+        <a href="https://www.fortunebusinessinsights.com/kids-smartwatch-market-115628">Fortune Business Insights — Kids Smartwatch Market</a><br>
+        <a href="https://storage.mfn.se/b5c0e321-94f3-4aee-a210-12de26bde414/xplora-2024-annual-report.pdf">Xplora 2024 Annual Report</a><br>
+        <a href="https://storage.mfn.se/cad5b9f2-198b-4950-8d7b-5714054d3eed/xplora-q4-2025-report.pdf">Xplora Q4 2025 Report</a><br>
+        <a href="https://investor.xplora.com/pages/this-is-xplora">Xplora Investor Relations</a><br>
+        <a href="https://cdn.financialreports.eu/financialreports/media/filings/3572/2025/RNS/3572_rns_2025-08-15_4366e4cd-c795-4432-8096-492306d17512.pdf">Xplora H1 2025 Channel Presentation</a><br>
+        <a href="https://announcements.asx.com.au/asxpdf/20250930/pdf/06px5zdnhqmztt.pdf">Spacetalk FY2025 Annual Report</a><br>
+        <a href="https://www8.garmin.com/aboutGarmin/invRelations/reports/2025_Annual_Report.pdf">Garmin 2025 Annual Report</a><br>
+        <a href="https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions">FTC — COPPA Guidance</a><br>
+        <a href="https://commission.europa.eu/law/law-topic/data-protection/information-business-and-organisations/legal-grounds-processing-data/are-there-any-specific-safeguards-data-about-children_en">European Commission — Safeguards for Children’s Data</a><br>
+        <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/">ICO — Age Appropriate Design Code</a><br>
+        <a href="https://github.com/sorftime/sorftime-cli">Sorftime CLI Documentation</a>
+      </div>
+    </section>
+
+    <footer>Prepared for Xiaozhi AI Watch · Research snapshot · 2026-08-18 · Sources linked inline · Not legal, financial, or investment advice.</footer>
+  </main>
+</body>
+</html>
