@@ -231,6 +231,35 @@
     .ai-case article:last-child { border-color: #e3aa91; background: #fff3ea; }
     .ai-case p { margin: 0; color: var(--muted); font-size: 15px; }
     .ai-case .score { display: block; margin: 6px 0 10px; color: var(--mint-strong); font: 700 35px/1 var(--mono); letter-spacing: -.09em; }
+    .edge-lab { position: relative; overflow: hidden; padding: 34px; margin-top: 24px; color: #f7f5ec; background: #0b1916; }
+    .edge-lab::before { content: "EDGE"; position: absolute; right: -12px; top: -42px; color: rgba(248,207,94,.08); font: 900 156px/1 var(--mono); letter-spacing: -.15em; }
+    .edge-lab h3 { position: relative; color: var(--yellow); font-size: 25px; }
+    .edge-lab p { position: relative; color: #cbd7d1; font-size: 15px; }
+    .edge-claim { position: relative; display: grid; grid-template-columns: .85fr 1.15fr; gap: 28px; align-items: end; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,.16); }
+    .edge-claim b { display: block; color: var(--yellow); font: 700 clamp(39px,5vw,67px)/.94 var(--mono); letter-spacing: -.11em; }
+    .edge-claim span { display: block; margin-top: 10px; color: #d4e0da; font-size: 16px; }
+    .edge-path { position: relative; display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 28px; }
+    .edge-node { position: relative; min-height: 214px; padding: 22px; border: 1px solid rgba(255,255,255,.17); background: rgba(255,255,255,.05); }
+    .edge-node .num { color: var(--orange); font: 500 12px var(--mono); letter-spacing: .08em; }
+    .edge-node h3 { margin-top: 8px; font-size: 20px; }
+    .edge-node ul { margin: 11px 0 0; padding-left: 19px; color: #c9d3cf; font-size: 14px; }
+    .edge-node li { margin: 6px 0; }
+    .edge-node.warn { border-color: rgba(242,106,61,.65); background: rgba(242,106,61,.09); }
+    .edge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 22px; }
+    .edge-card { padding: 25px; color: var(--ink); background: var(--card); border: 1px solid var(--line); }
+    .edge-card h3 { font-size: 22px; }
+    .edge-card p { margin: 0; color: var(--muted); font-size: 15px; }
+    .edge-card ul { margin: 14px 0 0; padding-left: 20px; }
+    .edge-card li { margin: 7px 0; font-size: 15px; }
+    .edge-card.risk { background: #fff1e8; border-color: #e9b19a; }
+    .edge-card .mini-label { display: inline-block; margin-bottom: 10px; color: var(--mint-strong); font: 500 11px var(--mono); letter-spacing: .08em; }
+    .edge-card.risk .mini-label { color: #b64e2e; }
+    .edge-skus { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 22px; background: var(--line); border: 1px solid var(--line); }
+    .edge-sku { padding: 22px; background: var(--card); }
+    .edge-sku h3 { margin: 6px 0 10px; font-family: var(--sans); }
+    .edge-sku p { margin: 0; color: var(--muted); font-size: 14px; }
+    .edge-sku .badge { display: inline-block; padding: 3px 7px; color: #1d4f3c; background: var(--mint); font: 500 10px var(--mono); }
+    .edge-sku .badge.orange { color: #73331f; background: #f8d4c5; }
     footer { padding: 34px 0 0; margin-top: 14px; color: var(--muted); border-top: 1px solid var(--line); font: 11px var(--mono); letter-spacing: .03em; }
     @media (max-width: 860px) {
       .shell { padding: 0 18px 60px; }
@@ -244,7 +273,8 @@
       .brand-data-row { grid-template-columns: 110px 1fr; gap: 8px 12px; }
       .brand-data-row .signal { grid-column: 1 / -1; }
       .brand-data-row .grade { grid-column: 2; grid-row: 1; }
-      .growth-space, .connection-grid, .ai-case { grid-template-columns: 1fr; }
+      .growth-space, .connection-grid, .ai-case, .edge-grid, .edge-claim { grid-template-columns: 1fr; }
+      .edge-path, .edge-skus { grid-template-columns: 1fr; }
       .section-head { grid-template-columns: 1fr; gap: 8px; }
       .stats { grid-template-columns: 1fr; }
       .sources { columns: 1; }
@@ -266,7 +296,7 @@
   <main class="shell">
     <div class="topbar">
       <div class="brand"><span class="brand-mark">智</span> XIAOZHI / MARKET INTELLIGENCE</div>
-      <div class="report-meta">CONFIDENTIAL · 2026.08.18 · V1.2</div>
+      <div class="report-meta">CONFIDENTIAL · 2026.08.19 · V1.3</div>
     </div>
 
     <section class="hero">
@@ -286,7 +316,7 @@
     </section>
 
     <nav class="quick-nav" aria-label="报告导航">
-      <a href="#decision">结论</a><a href="#maturity">市场成熟度</a><a href="#brands">品牌版图</a><a href="#commerce">电商数据</a><a href="#sorftime-framework">Sorftime 四维法</a><a href="#top10">Top 10 经营数据</a><a href="#model">商业模型</a><a href="#product">产品边界</a><a href="#compliance">合规</a><a href="#roadmap">90 天验证</a>
+      <a href="#decision">结论</a><a href="#maturity">市场成熟度</a><a href="#brands">品牌版图</a><a href="#commerce">电商数据</a><a href="#sorftime-framework">Sorftime 四维法</a><a href="#top10">Top 10 经营数据</a><a href="#model">商业模型</a><a href="#product">产品边界</a><a href="#edge-ai">端侧 AI</a><a href="#compliance">合规</a><a href="#roadmap">90 天验证</a>
     </nav>
 
     <section id="decision" class="decision">
@@ -601,8 +631,44 @@
       <p class="note"><strong>小智 AI 的可行性判断：</strong>机会在“安全连接之后的高频家庭协同”，不是把大模型装进表里。先用 Wi‑Fi / 蜂窝双路径验证家长第 30 天留存、AI 功能使用率、投诉率和续费；任一儿童安全或隐私重大事件都应触发停售与复盘，而不是用增长抵消。</p>
     </section>
 
+    <section id="edge-ai" class="section">
+      <div class="section-head"><span class="section-no">08 / EDGE AI</span><div><h2>新方向：端侧模型手表——离线智能，不等于离线连接</h2><p class="section-intro">这是在原方案之外新增的产品路径：把“理解、提醒、部分生成和隐私处理”放到手表端，同时清楚划出无线连接仍不可替代的边界。</p></div></div>
+
+      <div class="edge-lab">
+        <div class="edge-claim">
+          <div><b>模型 ≠ 网络</b><span>端侧模型可以在没有云端推理时工作；但它无法凭空把手表接入父母、云端地图或紧急联系人。</span></div>
+          <p><strong>关键判断：</strong>不使用当地运营商 SIM/eSIM，确实可以省去蜂窝资费、运营商集成与部分连接客服；代价是手表只能在已连接 Wi‑Fi 或家长手机蓝牙中继范围内沟通。离开它们时，本地 AI 仍可响应，但远程定位、独立通话、SOS 上报与消息同步不可承诺。</p>
+        </div>
+        <div class="edge-path">
+          <article class="edge-node"><span class="num">01 / FULLY OFFLINE</span><h3>端侧立即可做</h3><ul><li>唤醒词、意图识别、闹钟/任务/习惯提醒</li><li>离线小问答、故事片段、奖励反馈</li><li>本地传感器模式识别与数据最小化</li><li>GNSS 可出位置，但无法把位置主动发给家长</li></ul></article>
+          <article class="edge-node"><span class="num">02 / WIFI OR BLE RELAY</span><h3>有网络时再同步</h3><ul><li>家庭 Wi‑Fi 下同步家长消息、内容包与模型更新</li><li>蓝牙连接父母手机时，借手机网络完成远程服务</li><li>适合家庭、校园固定网络和短时陪伴场景</li><li>需要明确显示“当前在线 / 仅离线”状态</li></ul></article>
+          <article class="edge-node warn"><span class="num">03 / CELLULAR STILL REQUIRED</span><h3>安全连接不能省</h3><ul><li>离家后的独立通话、实时位置、电子围栏</li><li>可靠的 SOS 上报与紧急联系人通知</li><li>无父母手机陪同的通勤、课外活动、旅行</li><li>这些价值仍需要蜂窝、卫星或其他广域网络</li></ul></article>
+        </div>
+      </div>
+
+      <div class="edge-grid">
+        <article class="edge-card">
+          <span class="mini-label">PRODUCT OPPORTUNITY</span><h3>端侧 AI 真正带来的四种价值</h3>
+          <ul><li><strong>隐私默认：</strong>儿童语音、习惯和部分上下文可留在设备，不必每次上传云端。</li><li><strong>低延迟：</strong>指令、提醒、固定内容无需等待网络；断网时仍保持核心交互。</li><li><strong>云成本可控：</strong>把高频、简单、可规则化任务留在本地，只把少量复杂请求交给云端。</li><li><strong>网络质量适配：</strong>东南亚或室内网络不稳定时，体验不完全失效。</li></ul>
+        </article>
+        <article class="edge-card risk">
+          <span class="mini-label">PRODUCT &amp; BUSINESS RISK</span><h3>省掉 SIM，不等于整体更便宜</h3>
+          <ul><li><strong>硬件成本：</strong>更大的存储、内存、算力、散热和电池预算会抬升 BOM。</li><li><strong>产品风险：</strong>小模型能力边界窄，儿童语言、多语言与噪声场景需要专项验证。</li><li><strong>运维风险：</strong>模型更新、签名、回滚、离线内容安全和设备生命周期管理仍需平台能力。</li><li><strong>安全风险：</strong>不能把“本地可识别”误宣传为“可保障紧急救援”；SOS 需要明确的联网状态和失败提示。</li></ul>
+        </article>
+      </div>
+
+      <div class="section-head" style="margin-top:38px"><span class="section-no">SKU / STRATEGY</span><div><h2>建议并行定义三条产品线，而非二选一</h2><p class="section-intro">端侧 AI 应是能力层；Wi‑Fi、蓝牙与蜂窝是覆盖范围和商业模式的选择。</p></div></div>
+      <div class="edge-skus">
+        <article class="edge-sku"><span class="badge">EDGE HOME</span><h3>Wi‑Fi 端侧陪伴表</h3><p><strong>人群：</strong>4–8 岁、家庭/固定场景为主的儿童。<br><strong>价值：</strong>离线提醒、受控 AI、亲子任务、家庭 Wi‑Fi 同步。<br><strong>边界：</strong>不承诺户外实时定位、独立通话或可靠 SOS。</p></article>
+        <article class="edge-sku"><span class="badge">EDGE COMPANION</span><h3>蓝牙中继端侧表</h3><p><strong>人群：</strong>父母常陪同、希望降低月费的家庭。<br><strong>价值：</strong>端侧交互 + 通过家长手机连接云端；适合先验证 AI 留存。<br><strong>边界：</strong>父母手机不在附近时，自动降级为离线功能。</p></article>
+        <article class="edge-sku"><span class="badge orange">EDGE CONNECTED</span><h3>蜂窝端侧安全表</h3><p><strong>人群：</strong>6–12 岁，独立通勤、课外活动和安全需求高的家庭。<br><strong>价值：</strong>端侧 AI 降低云成本 + eSIM 保留独立通信和 SOS。<br><strong>建议：</strong>这是美国/欧洲可规模化的主 SKU。</p></article>
+      </div>
+      <p class="note"><strong>研发顺序建议：</strong>先以 Wi‑Fi / 蓝牙中继版证明端侧交互的家长价值与功耗，再将同一套模型、内容安全和更新能力迁移到蜂窝主 SKU。通过“本地命令成功率、断网可用任务比例、日均耗电、家长 30 天留存、在线 SOS 成功率”五项指标决定是否扩大端侧模型投入。</p>
+      <p class="note"><strong>技术可行性信号：</strong>端侧推理已是可行方向：Google LiteRT 明确支持设备端处理输入数据，Qualcomm 2026 的 Wear Elite 平台则展示了面向穿戴设备的专用 NPU。但这些是能力上限的行业信号，不代表儿童手表需要或适合部署大参数模型；首代产品应优先小模型、固定任务和严格的内容边界。<a href="https://ai.google.dev/edge/litert/android/play_services?hl=zh-cn">LiteRT 说明</a> · <a href="https://www.qualcomm.com/wearables/products/snapdragon-wear-elite-platform">Wear Elite 说明</a></p>
+    </section>
+
     <section id="compliance" class="section">
-      <div class="section-head"><span class="section-no">08 / COMPLIANCE</span><div><h2>合规是立项前置条件，不是上线后补丁</h2><p class="section-intro">儿童的精确位置、语音、视频和行为数据属于最敏感的产品资产之一。</p></div></div>
+      <div class="section-head"><span class="section-no">09 / COMPLIANCE</span><div><h2>合规是立项前置条件，不是上线后补丁</h2><p class="section-intro">儿童的精确位置、语音、视频和行为数据属于最敏感的产品资产之一。</p></div></div>
       <div class="compliance">
         <article class="legal"><h3>美国 / COPPA</h3><p>联网设备、语音助手和位置服务均可能受 COPPA 约束；精确位置、儿童音频/视频属于受保护个人信息。</p><p><strong>产品动作：</strong>可验证家长同意、定位/语音最小化、SDK 审计、数据删除；不做广告画像。</p><a href="https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions">FTC 指引</a></article>
         <article class="legal"><h3>欧盟 / GDPR</h3><p>以同意为基础处理儿童数据时，父母同意门槛按成员国为 13–16 岁；需考虑跨境传输与数据处理协议。</p><p><strong>产品动作：</strong>首发国家逐个确认年龄、监护人验证、DPIA 与数据地图。</p><a href="https://commission.europa.eu/law/law-topic/data-protection/information-business-and-organisations/legal-grounds-processing-data/are-there-any-specific-safeguards-data-about-children_en">欧盟说明</a></article>
@@ -612,7 +678,7 @@
     </section>
 
     <section id="roadmap" class="section">
-      <div class="section-head"><span class="section-no">09 / EXECUTION</span><div><h2>先证明连接与订阅，再放大市场</h2><p class="section-intro">如果团队只有硬件供应链，无法做到 eSIM/MVNO、儿童数据治理和客服，不应先进入美国或欧洲。</p></div></div>
+      <div class="section-head"><span class="section-no">10 / EXECUTION</span><div><h2>先证明连接与订阅，再放大市场</h2><p class="section-intro">如果团队只有硬件供应链，无法做到 eSIM/MVNO、儿童数据治理和客服，不应先进入美国或欧洲。</p></div></div>
       <div class="roadmap">
         <ol class="steps">
           <li><b>美国商业化试点</b><span>完成运营商/eSIM、911/SOS 责任边界与 COPPA 后，做 500–1,000 台小批量商业试点。</span></li>
@@ -632,7 +698,7 @@
     </section>
 
     <section class="section">
-      <div class="section-head"><span class="section-no">10 / SOURCES</span><div><h2>主要证据与复查入口</h2><p class="section-intro">所有电商数据均应在下次评审时按抓取日期复核。</p></div></div>
+      <div class="section-head"><span class="section-no">11 / SOURCES</span><div><h2>主要证据与复查入口</h2><p class="section-intro">所有电商数据均应在下次评审时按抓取日期复核。</p></div></div>
       <div class="sources">
         <a href="https://www.fortunebusinessinsights.com/kids-smartwatch-market-115628">Fortune Business Insights — Kids Smartwatch Market</a><br>
         <a href="https://storage.mfn.se/b5c0e321-94f3-4aee-a210-12de26bde414/xplora-2024-annual-report.pdf">Xplora 2024 Annual Report</a><br>
@@ -641,6 +707,8 @@
         <a href="https://cdn.financialreports.eu/financialreports/media/filings/3572/2025/RNS/3572_rns_2025-08-15_4366e4cd-c795-4432-8096-492306d17512.pdf">Xplora H1 2025 Channel Presentation</a><br>
         <a href="https://announcements.asx.com.au/asxpdf/20250930/pdf/06px5zdnhqmztt.pdf">Spacetalk FY2025 Annual Report</a><br>
         <a href="https://www8.garmin.com/aboutGarmin/invRelations/reports/2025_Annual_Report.pdf">Garmin 2025 Annual Report</a><br>
+        <a href="https://ai.google.dev/edge/litert/android/play_services?hl=zh-cn">Google AI Edge — LiteRT 设备端处理说明</a><br>
+        <a href="https://www.qualcomm.com/wearables/products/snapdragon-wear-elite-platform">Qualcomm — Snapdragon Wear Elite on-device AI</a><br>
         <a href="https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions">FTC — COPPA Guidance</a><br>
         <a href="https://commission.europa.eu/law/law-topic/data-protection/information-business-and-organisations/legal-grounds-processing-data/are-there-any-specific-safeguards-data-about-children_en">European Commission — Safeguards for Children’s Data</a><br>
         <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/">ICO — Age Appropriate Design Code</a><br>
