@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AI电话硬件盒子出海市场、替代方案、WhatsApp限制及Gallabox案例可行性报告。">
+  <meta name="description" content="AI电话硬件盒子出海市场、替代方案、WhatsApp限制，以及Telnyx与Gallabox案例可行性报告。">
   <title>AI 电话硬件盒子｜出海可行性调研报告</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -275,6 +275,30 @@
     .fact span { color: var(--muted); }
     .red-flag { margin-top: 18px; padding: 15px; color: #733c2d; background: #ffe5d9; border-left: 5px solid var(--red); font-size: 13px; }
 
+    .provider-case { margin-top: 30px; border: 1px solid var(--line); background: var(--line); box-shadow: 0 14px 36px rgba(16,24,20,.07); }
+    .provider-case-main { display: grid; grid-template-columns: .78fr 1.22fr; gap: 1px; }
+    .provider-profile { position: relative; overflow: hidden; padding: 30px; color: #f4f2e9; background: var(--night); }
+    .provider-profile::after { content: "API"; position: absolute; right: -8px; bottom: -36px; color: rgba(255,255,255,.045); font: 700 124px/1 var(--mono); letter-spacing: -.1em; }
+    .provider-profile h3 { position: relative; z-index: 1; margin: 12px 0 10px; font: 900 36px/1.08 var(--serif); }
+    .provider-profile p { position: relative; z-index: 1; margin: 0; color: #c8d2cc; font-size: 14px; }
+    .provider-stats { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; margin-top: 24px; background: rgba(255,255,255,.15); }
+    .provider-stats div { padding: 15px; background: var(--night-2); }
+    .provider-stats b { display: block; color: var(--lime); font: 600 21px/1 var(--mono); }
+    .provider-stats span { display: block; margin-top: 6px; color: #aeb9b2; font-size: 11px; }
+    .provider-detail { padding: 30px; background: var(--paper-2); }
+    .provider-detail h3 { margin: 8px 0 15px; font: 800 24px var(--serif); }
+    .provider-flow { display: grid; grid-template-columns: repeat(5,1fr); gap: 1px; border-top: 1px solid var(--line); background: var(--line); }
+    .provider-step { min-height: 128px; padding: 18px; background: var(--paper-2); }
+    .provider-step small { color: var(--red); font: 600 9px var(--mono); letter-spacing: .09em; }
+    .provider-step b { display: block; margin-top: 9px; font-size: 13px; }
+    .provider-step span { display: block; margin-top: 5px; color: var(--muted); font-size: 11px; line-height: 1.45; }
+    .provider-pricing { padding: 22px; background: var(--paper); border-top: 1px solid var(--line); }
+    .provider-pricing h3 { margin: 0; font: 800 20px var(--serif); }
+    .provider-pricing .cost-stack { margin-top: 12px; }
+    .provider-note { padding: 18px 22px; color: #dce4df; background: var(--night-2); border-top: 1px solid rgba(255,255,255,.12); font-size: 13px; }
+    .provider-note strong { color: var(--lime); }
+    .provider-note a { color: #fff; }
+
     .cost-stack { display: grid; grid-template-columns: repeat(5,1fr); gap: 1px; margin-top: 16px; border: 1px solid var(--line); background: var(--line); }
     .cost { padding: 17px; background: var(--paper-2); }
     .cost b { display: block; color: var(--lime-dark); font: 600 15px var(--mono); }
@@ -307,13 +331,14 @@
     @media (max-width: 1050px) {
       .hero { grid-template-columns: 1fr; }
       .hero-visual { min-height: 520px; border-left: 0; border-top: 1px solid rgba(255,255,255,.13); }
-      .executive, .evidence-strip, .score-board, .market-focus, .galla-hero, .validation { grid-template-columns: 1fr; }
+      .executive, .evidence-strip, .score-board, .market-focus, .galla-hero, .provider-case-main, .validation { grid-template-columns: 1fr; }
       .answer-grid { grid-template-columns: repeat(2,1fr); }
       .alt-grid { grid-template-columns: repeat(2,1fr); }
       .rule-grid { grid-template-columns: repeat(2,1fr); }
       .flow { grid-template-columns: 1fr 1fr; }
       .flow-node:not(:last-child)::after { display: none; }
       .cost-stack { grid-template-columns: repeat(2,1fr); }
+      .provider-flow { grid-template-columns: repeat(2,1fr); }
       .sources { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 700px) {
@@ -336,6 +361,7 @@
       .alt-grid { grid-template-columns: 1fr; }
       .flow { grid-template-columns: 1fr; }
       .cost-stack { grid-template-columns: 1fr; }
+      .provider-flow { grid-template-columns: 1fr; }
       .footer { flex-direction: column; }
     }
 
@@ -354,7 +380,7 @@
       .hero-verdict { width: 285px; padding: 16px 18px; }
       .hero-verdict strong { font-size: 28px; }
       .rule-card, .alt-card, .score-card, .focus-card, .gate, .galla-profile,
-      .galla-analysis, .reference-box, .answer-card, .source, .evidence-box, tr { break-inside: avoid; }
+      .galla-analysis, .provider-profile, .provider-detail, .provider-step, .reference-box, .answer-card, .source, .evidence-box, tr { break-inside: avoid; }
       .table-wrap { overflow: visible; }
       table { min-width: 0; font-size: 10px; }
       th, td { padding: 9px; }
@@ -367,7 +393,7 @@
   <main class="page">
     <header class="topline">
       <div class="identity"><span class="identity-mark">AI</span><span>Overseas Market Research / Evidence Brief</span></div>
-      <div class="top-actions"><span class="report-date">2026-08-31 · Asia/Shanghai</span><button class="print-btn" type="button" onclick="window.print()">打印 / 导出 PDF</button></div>
+      <div class="top-actions"><span class="report-date">更新于 2026-09-01 · Asia/Shanghai</span><button class="print-btn" type="button" onclick="window.print()">打印 / 导出 PDF</button></div>
     </header>
 
     <section class="hero" aria-labelledby="report-title">
@@ -390,7 +416,7 @@
     </section>
 
     <nav class="nav" aria-label="报告目录">
-      <a href="#answers">五问先答</a><a href="#market">01 同类产品/营销</a><a href="#alternatives">02 平替产品</a><a href="#feasibility">03 市场规模</a><a href="#whatsapp">04 WhatsApp可行性</a><a href="#gallabox">05 Gallabox</a><a href="#sources">附录来源</a>
+      <a href="#answers">五问先答</a><a href="#market">01 同类产品/营销</a><a href="#alternatives">02 平替产品</a><a href="#feasibility">03 市场规模</a><a href="#whatsapp">04 WhatsApp可行性</a><a href="#telnyx">Telnyx案例</a><a href="#gallabox">05 Gallabox</a><a href="#sources">附录来源</a>
     </nav>
 
     <section class="answer-deck reveal" id="answers">
@@ -434,7 +460,7 @@
             <tr><td><strong>Bland AI</strong></td><td>AI 外呼/接听 API</td><td class="price">约 $0.11–0.14/分钟</td><td>重点是批量外呼、自动转接与企业工作流，可替代大部分拨打功能。</td><td><a href="https://docs.bland.ai/platform/billing" target="_blank" rel="noopener">bland.ai ↗</a></td></tr>
             <tr><td><strong>RingCentral</strong></td><td>AI Receptionist</td><td class="price">约 $49/月，含100分钟</td><td>面向门店和中小企业的成品 AI 前台，完成接听、问答、转接和预约。</td><td><a href="https://www.ringcentral.com/pricing/ai-receptionist.html" target="_blank" rel="noopener">ringcentral.com ↗</a></td></tr>
             <tr><td><strong>Dialzara</strong></td><td>AI Receptionist</td><td class="price">$29/月起，含60分钟</td><td>低门槛的来电接听、消息记录和转接，对本地服务商构成直接平替。</td><td><a href="https://dialzara.com/pricing" target="_blank" rel="noopener">dialzara.com ↗</a></td></tr>
-            <tr><td><strong>Telnyx</strong></td><td>WhatsApp Business Calling</td><td class="price">平台约 $0.0025/分钟＋Meta/AI费</td><td>将 WhatsApp 通话接入 SIP、WebRTC 或 AI，适用于用户呼入与已授权的企业呼出。</td><td><a href="https://telnyx.com/pricing/whatsapp" target="_blank" rel="noopener">telnyx.com ↗</a></td></tr>
+            <tr><td><strong>Telnyx</strong></td><td>WhatsApp Calling＋Voice AI</td><td class="price">通话 $0.0025/分钟；AI $0.05/分钟起</td><td>将同一号码的 WhatsApp 通话接入 SIP、Voice API 或 AI；适用于用户呼入与已授权的企业呼出，详见后文案例。</td><td><a href="https://telnyx.com/products/whatsapp-business-api" target="_blank" rel="noopener">telnyx.com ↗</a></td></tr>
             <tr><td><strong>Twilio</strong></td><td>WhatsApp Voice / Messaging</td><td class="price">平台约 $0.005/分钟＋Meta/AI费</td><td>通讯 API 生态完整，可将 WhatsApp 、普通电话、消息与自建 AI 组合。</td><td><a href="https://www.twilio.com/en-us/whatsapp/pricing" target="_blank" rel="noopener">twilio.com ↗</a></td></tr>
             <tr><td><strong>Infobip</strong></td><td>企业级 WhatsApp / Voice AI</td><td class="price">询价</td><td>提供 WhatsApp Calling、呼叫中心、AI Agent 与合规通讯通道，适合大型企业。</td><td><a href="https://www.infobip.com/docs/voice-ai-agents" target="_blank" rel="noopener">infobip.com ↗</a></td></tr>
             <tr><td><strong>VoiceGate</strong></td><td>实体 GSM/手机转 SIP 网关</td><td class="price">$59–229＋$15–99/月</td><td>只解决现有手机号或 SIM 接入 SIP，AI 可由外部平台提供。</td><td><a href="https://voicegate.io/en/" target="_blank" rel="noopener">voicegate.io ↗</a></td></tr>
@@ -477,7 +503,7 @@
 
       <div class="evidence-strip">
         <article class="evidence-box"><span class="label">用户主动呼入</span><h3>可行：WhatsApp 来电可转给 AI 接听。</h3><p>用户在 WhatsApp 中点击通话后，BSP 可将媒体流交给 SIP/WebRTC 或 AI Agent，完成语音识别、回答、转写、转人工和 CRM 记录。</p><a class="micro-source" href="https://whatsappbusiness.com/blog/whatsapp-business-calling-api/" target="_blank" rel="noopener">WhatsApp Business Calling API</a></article>
-        <article class="evidence-box alert"><span class="label">企业主动呼出</span><h3>有条件可行：必须先获得通话权限。</h3><p>企业不能像普通电话系统一样直接遍历号码库。需先发送 WhatsApp 通话权限请求，用户接受后才可拨打；且权限请求本身也受频次限制。</p><a class="micro-source" href="https://www.infobip.com/docs/whatsapp/whatsapp-business-calling/business-initiated-calling" target="_blank" rel="noopener">Business-initiated Calling Rules</a></article>
+        <article class="evidence-box alert"><span class="label">企业主动呼出</span><h3>有条件可行：必须先获得通话权限。</h3><p>企业不能像普通电话系统一样直接遍历号码库。需先发送 WhatsApp 通话权限请求，用户接受后才可拨打；且权限请求本身也受频次限制。</p><a class="micro-source" href="https://support.telnyx.com/en/articles/14668631-enabling-whatsapp-business-calling-on-telnyx-numbers" target="_blank" rel="noopener">Telnyx Calling Rules</a></article>
       </div>
 
       <div class="flow" aria-label="WhatsApp企业主动呼叫合规流程">
@@ -490,11 +516,60 @@
 
       <div class="rule-grid">
         <article class="rule-card danger"><span class="rule-value">禁止盲加</span><h3>拿到手机号，不等于拿到 WhatsApp 联系权</h3><p>对方需要曾提供号码，并明确同意接收该企业的 WhatsApp 消息。未授权导入、惊扰式消息、垃圾营销和不履行退订都可导致用户举报与账号限制。</p><a href="https://business.whatsapp.com/policy/preview?lang=en_US" target="_blank" rel="noopener">WhatsApp Business Messaging Policy ↗</a></article>
-        <article class="rule-card"><span class="rule-value">1 / 24h</span><h3>通话权限请求频率受限</h3><p>每24小时最多一次，每7天最多两次；临时权限通常有效7天。连续无人接听会触发提醒，达到阈值后可撤销权限。</p><a href="https://www.infobip.com/docs/whatsapp/whatsapp-business-calling/business-initiated-calling" target="_blank" rel="noopener">权限与频次规则 ↗</a></article>
-        <article class="rule-card"><span class="rule-value">地区限制</span><h3>部分企业号码不能主动呼叫</h3><p>当前包括美国、加拿大、埃及、尼日利亚、越南等；不同BSP名单可能略有差异，部署前必须按企业号码国家复核。</p><a href="https://www.infobip.com/docs/whatsapp/whatsapp-business-calling/business-initiated-calling" target="_blank" rel="noopener">当前可用国家 ↗</a></article>
-        <article class="rule-card"><span class="rule-value">并非免费</span><h3>无SIM费，不代表零成本</h3><p>用户主动呼入的Meta连接费通常为0，但BSP平台、AI语音、录音和转写仍收费；企业呼出另收Meta地区分钟费。</p><a href="https://www.twilio.com/en-us/whatsapp/pricing" target="_blank" rel="noopener">Twilio WhatsApp价格 ↗</a></article>
-        <article class="rule-card"><span class="rule-value">无PSTN桥</span><h3>WhatsApp与普通电话不是同一网络</h3><p>WhatsApp Calling可连接SIP、WebRTC和AI，但官方不支持直接桥接到普通移动/固定电话。要覆盖所有客户仍需PSTN或SIM。</p><a href="https://www.infobip.com/blog/whatsapp-business-calling-api-guide" target="_blank" rel="noopener">Infobip技术说明 ↗</a></article>
+        <article class="rule-card"><span class="rule-value">1 / 24h</span><h3>通话权限请求频率受限</h3><p>每24小时最多一次，每7天最多两次；临时权限通常有效7天。连续无人接听会触发提醒，四次未接后授权可被撤销。</p><a href="https://support.telnyx.com/en/articles/14668631-enabling-whatsapp-business-calling-on-telnyx-numbers" target="_blank" rel="noopener">权限与频次规则 ↗</a></article>
+        <article class="rule-card"><span class="rule-value">地区限制</span><h3>部分企业号码不能主动呼叫</h3><p>当前包括美国、加拿大、埃及、尼日利亚、越南等；不同BSP名单可能略有差异，部署前必须按企业号码国家复核。</p><a href="https://support.telnyx.com/en/articles/14668631-enabling-whatsapp-business-calling-on-telnyx-numbers" target="_blank" rel="noopener">Telnyx当前可用国家 ↗</a></article>
+        <article class="rule-card"><span class="rule-value">并非免费</span><h3>无SIM费，不代表零成本</h3><p>Telnyx收取WhatsApp通话平台费；AI语音、模型、录音与号码另计，企业呼出还可能叠加Meta地区分钟费。</p><a href="https://telnyx.com/pricing/whatsapp" target="_blank" rel="noopener">Telnyx WhatsApp价格 ↗</a></article>
+        <article class="rule-card"><span class="rule-value">无PSTN桥</span><h3>WhatsApp与普通电话不是同一网络</h3><p>WhatsApp Calling可连接SIP、Voice API和AI，但不能把WhatsApp电话直接桥接成普通移动/固定电话。覆盖非WhatsApp用户仍需PSTN或SIM。</p><a href="https://support.telnyx.com/en/articles/14668631-enabling-whatsapp-business-calling-on-telnyx-numbers" target="_blank" rel="noopener">Telnyx技术说明 ↗</a></article>
         <article class="rule-card danger"><span class="rule-value">跨境合规</span><h3>AI、录音、声音克隆需单独治理</h3><p>美国 AI 合成语音受 TCPA 人工/预录语音规则约束；欧盟直接 AI 交互应披露 AI 身份。还需按当地法律处理录音告知、同意、数据保存、跨境传输和退订。</p><a href="https://docs.fcc.gov/public/attachments/DOC-400393A1.pdf" target="_blank" rel="noopener">FCC裁定</a> · <a href="https://www.ftc.gov/business-guidance/resources/complying-telemarketing-sales-rule" target="_blank" rel="noopener">FTC TSR</a> · <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A02024R1689-20260727" target="_blank" rel="noopener">EU AI Act</a></article>
+      </div>
+
+      <div class="provider-case" id="telnyx">
+        <div class="provider-case-main">
+          <article class="provider-profile">
+            <span class="label">CASE · CLOUD INFRASTRUCTURE</span>
+            <h3>Telnyx</h3>
+            <p>它不是实体盒子，也不是成品销售 CRM，而是一家美国通信基础设施与 CPaaS 服务商。企业可把号码、SIP、WhatsApp 消息/电话和 Voice AI 放在同一通信底座上。</p>
+            <div class="provider-stats">
+              <div><b>2009</b><span>公司成立</span></div>
+              <div><b>17 PoPs</b><span>官方披露网络节点</span></div>
+              <div><b>130+</b><span>可提供本地号码的国家</span></div>
+              <div><b>按量计费</b><span>WhatsApp无平台月租套餐</span></div>
+            </div>
+          </article>
+          <article class="provider-detail">
+            <span class="label">WHAT IT DOES / HOW IT WORKS</span>
+            <h3>同一号码承载WhatsApp电话、普通电话与AI</h3>
+            <div class="fact-list">
+              <div class="fact"><b>公司背景</b><span>创始人兼CEO为David Casem，总部位于美国奥斯汀；底层业务包括VoIP、号码、SIP、Voice API、消息、IoT与网络服务。</span></div>
+              <div class="fact"><b>用户呼入</b><span>WhatsApp用户从App内拨号，Meta将电话交给Telnyx，再路由至企业SIP、Voice API、TeXML、人工坐席或AI Assistant。</span></div>
+              <div class="fact"><b>企业呼出</b><span>企业从SIP或可编程语音应用发起WhatsApp呼叫；必须先取得用户临时或永久通话授权，不能遍历陌生号码库直接冷呼。</span></div>
+              <div class="fact"><b>AI能力</b><span>AI语音已上线，可完成STT、LLM推理、TTS、工具调用、录音、摘要和转人工；官网仍将WhatsApp原生AI文字标为“9月推出”，尚需确认正式开放。</span></div>
+              <div class="fact"><b>产品边界</b><span>它提供通信通道和开发工具，不自动等于一套完整的销售运营系统；CRM、行业流程和前端工作台仍需企业自行接入或开发。</span></div>
+            </div>
+            <div class="red-flag"><strong>关键门槛：</strong>启用Calling的WABA需达到每日2,000名不同收件人的消息额度；企业主动呼出在美国、加拿大、埃及、越南和尼日利亚号码上不可用。</div>
+          </article>
+        </div>
+
+        <div class="provider-flow" aria-label="Telnyx WhatsApp AI电话接入链路">
+          <div class="provider-step"><small>01 / META</small><b>绑定企业WABA</b><span>通过Meta Embedded Signup完成企业账户连接。</span></div>
+          <div class="provider-step"><small>02 / NUMBER</small><b>验证Telnyx号码</b><span>号码须归属同一Telnyx账户，并通过短信或电话验证码。</span></div>
+          <div class="provider-step"><small>03 / ENABLE</small><b>开启Calling</b><span>在Mission Control按号码启用WhatsApp Calling。</span></div>
+          <div class="provider-step"><small>04 / ROUTE</small><b>路由至SIP或API</b><span>呼入进入SIP、Voice API或TeXML；呼出使用WhatsApp SIP域名。</span></div>
+          <div class="provider-step"><small>05 / AI</small><b>挂接AI与业务系统</b><span>连接AI Assistant、CRM、知识库、录音分析与人工接管。</span></div>
+        </div>
+
+        <div class="provider-pricing">
+          <h3>公开成本是分层叠加，不是单一“电话分钟价”</h3>
+          <div class="cost-stack">
+            <div class="cost"><b>$0.0025/分钟</b><span>WhatsApp Calling平台费</span></div>
+            <div class="cost"><b>$0.004/条</b><span>WhatsApp消息平台费</span></div>
+            <div class="cost"><b>$0.05/分钟</b><span>Voice AI引擎，含STT/TTS/编排</span></div>
+            <div class="cost"><b>$1/月起</b><span>Telnyx本地号码</span></div>
+            <div class="cost"><b>＋Meta/LLM</b><span>企业呼出地区费与模型Token另计</span></div>
+          </div>
+        </div>
+
+        <div class="provider-note"><strong>对本项目的意义：</strong>Telnyx证明“不用SIM、不用实体盒子”的WhatsApp AI接听与授权外呼已经可以商品化，构成硬件方案的成熟云端替代。它同时证明硬件不能绕过WhatsApp授权与地区限制，硬件只有在必须保留本地SIM、旧号码或传统线路时才形成额外价值。背景尽调方面，FCC于2025年曾就非法语音流量治理向Telnyx提出约449万美元拟处罚，Telnyx已正式争议；该事项并非WhatsApp产品问题，本次未查到最终罚款裁定。来源：<a href="https://telnyx.com/products/whatsapp-business-api" target="_blank" rel="noopener">产品页</a> · <a href="https://support.telnyx.com/en/articles/14668631-enabling-whatsapp-business-calling-on-telnyx-numbers" target="_blank" rel="noopener">Calling文档</a> · <a href="https://docs.fcc.gov/public/attachments/FCC-25-10A1.pdf" target="_blank" rel="noopener">FCC通知</a> · <a href="https://telnyx.com/resources/telnyx-response-to-fcc-nal" target="_blank" rel="noopener">Telnyx回应</a></div>
       </div>
     </section>
 
@@ -520,8 +595,14 @@
     </section>
 
     <section class="section reveal" id="sources">
-      <div class="section-head"><span class="section-no">APPENDIX · SOURCES</span><div><h2>关键来源与证据等级</h2><p class="section-intro">Gallabox 为最后一个分析章节；此处仅作证据附录。优先使用官方定价、官方文档和监管机构，企业自报效果不作为独立财务事实。</p></div></div>
+      <div class="section-head"><span class="section-no">APPENDIX · SOURCES</span><div><h2>关键来源与证据等级</h2><p class="section-intro">Gallabox 仍为最后一个分析章节；此处仅作证据附录。Telnyx以官方产品、开发文档与监管文件交叉核查，企业自报效果不作为独立财务事实。</p></div></div>
       <div class="sources">
+        <article class="source"><small>A · OFFICIAL PRODUCT</small><a href="https://telnyx.com/products/whatsapp-business-api" target="_blank" rel="noopener">Telnyx WhatsApp Business API</a><span>同一号码承载消息、Calling、SIP与Voice AI的产品范围。</span></article>
+        <article class="source"><small>A · PROVIDER DOCS</small><a href="https://support.telnyx.com/en/articles/14668631-enabling-whatsapp-business-calling-on-telnyx-numbers" target="_blank" rel="noopener">Telnyx WhatsApp Calling</a><span>接入步骤、授权频次、国家限制、费用与禁止PSTN桥接。</span></article>
+        <article class="source"><small>A · OFFICIAL PRICING</small><a href="https://telnyx.com/pricing/whatsapp" target="_blank" rel="noopener">Telnyx WhatsApp Pricing</a><span>Calling与消息平台用量价格，以及Meta费用边界。</span></article>
+        <article class="source"><small>A · OFFICIAL PRICING</small><a href="https://telnyx.com/pricing/voice-ai-agents" target="_blank" rel="noopener">Telnyx Voice AI Pricing</a><span>AI编排、STT、TTS、LLM与通信费用结构。</span></article>
+        <article class="source"><small>A · COMPANY PROFILE</small><a href="https://support.telnyx.com/en/articles/1130646-where-is-telnyx-located" target="_blank" rel="noopener">Telnyx Company Background</a><span>2009年成立、奥斯汀总部与海外办公室。</span></article>
+        <article class="source"><small>A · REGULATOR</small><a href="https://docs.fcc.gov/public/attachments/FCC-25-10A1.pdf" target="_blank" rel="noopener">FCC Telnyx NAL</a><span>2025年拟处罚通知；属于监管指控，不等同最终裁定。</span></article>
         <article class="source"><small>A · OFFICIAL PRODUCT</small><a href="https://gallabox.com/pricing" target="_blank" rel="noopener">Gallabox Pricing</a><span>Advanced价格、用户数、AI credits与Voice范围。</span></article>
         <article class="source"><small>A · OFFICIAL CHANGELOG</small><a href="https://changelog.gallabox.com/december-18-merge-contacts-and-voice-call" target="_blank" rel="noopener">Gallabox WhatsApp Voice AI</a><span>ElevenLabs接入、只支持呼入的明确说明。</span></article>
         <article class="source"><small>B · VERIFIED REVIEWS</small><a href="https://www.g2.com/products/gallabox/reviews" target="_blank" rel="noopener">Gallabox G2 Reviews</a><span>4.6/5、169条评价及常见优缺点。</span></article>
@@ -538,10 +619,12 @@
       </div>
     </section>
 
-    <footer class="footer"><span>AI PHONE EDGE BOX · OVERSEAS FEASIBILITY DOSSIER</span><span>Prepared 2026-08-31 · 信息可能随Meta、运营商与各国法规更新</span></footer>
+    <footer class="footer"><span>AI PHONE EDGE BOX · OVERSEAS FEASIBILITY DOSSIER</span><span>Updated 2026-09-01 · 信息可能随Meta、运营商与各国法规更新</span></footer>
   </main>
 
   <script>
+    const deepLinkTarget = location.hash ? document.getElementById(location.hash.slice(1)) : null;
+    if (deepLinkTarget) deepLinkTarget.closest('.reveal')?.classList.add('visible');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.08 });
