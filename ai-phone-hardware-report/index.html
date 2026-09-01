@@ -295,6 +295,29 @@
     .provider-pricing { padding: 22px; background: var(--paper); border-top: 1px solid var(--line); }
     .provider-pricing h3 { margin: 0; font: 800 20px var(--serif); }
     .provider-pricing .cost-stack { margin-top: 12px; }
+    .provider-block { padding: 28px; background: var(--paper-2); border-top: 1px solid var(--line); }
+    .provider-block-head { display: grid; grid-template-columns: 170px minmax(0,1fr); gap: 22px; margin-bottom: 18px; }
+    .provider-block-head h3 { margin: 0; font: 900 27px/1.18 var(--serif); }
+    .provider-block-head p { max-width: 820px; margin: 3px 0 0; color: var(--muted); font-size: 13px; }
+    .provider-limit-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; border: 1px solid var(--line); background: var(--line); }
+    .provider-limit { min-height: 144px; padding: 17px; background: var(--paper); }
+    .provider-limit b { display: block; color: var(--red); font: 600 12px/1.2 var(--mono); }
+    .provider-limit span { display: block; margin-top: 9px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+    .provider-fit { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 1px; background: var(--line); }
+    .provider-fit div { padding: 17px; background: var(--night); color: #dce4df; font-size: 13px; }
+    .provider-fit div:last-child { background: #fff0e8; color: #71483d; }
+    .provider-fit strong { display: block; margin-bottom: 5px; color: var(--lime); font: 600 10px var(--mono); letter-spacing: .08em; }
+    .provider-fit div:last-child strong { color: var(--red); }
+    .provider-context { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; border-top: 1px solid var(--line); background: var(--line); }
+    .provider-context-card { padding: 28px; background: var(--paper-2); }
+    .provider-context-card.accent { color: #f4f2e9; background: var(--night); }
+    .provider-context-card h3 { margin: 8px 0 11px; font: 900 25px/1.2 var(--serif); }
+    .provider-context-card p { margin: 0; color: var(--muted); font-size: 13px; }
+    .provider-context-card.accent p { color: #c6d0ca; }
+    .provider-context-card ul { margin: 14px 0 0; padding-left: 18px; color: var(--muted); font-size: 13px; }
+    .provider-context-card.accent ul { color: #c6d0ca; }
+    .provider-context-card li { margin: 6px 0; }
+    .provider-maturity { margin-top: 18px; padding: 15px; color: var(--ink); background: var(--lime); font: 700 13px/1.55 var(--sans); }
     .provider-note { padding: 18px 22px; color: #dce4df; background: var(--night-2); border-top: 1px solid rgba(255,255,255,.12); font-size: 13px; }
     .provider-note strong { color: var(--lime); }
     .provider-note a { color: #fff; }
@@ -331,7 +354,7 @@
     @media (max-width: 1050px) {
       .hero { grid-template-columns: 1fr; }
       .hero-visual { min-height: 520px; border-left: 0; border-top: 1px solid rgba(255,255,255,.13); }
-      .executive, .evidence-strip, .score-board, .market-focus, .galla-hero, .provider-case-main, .validation { grid-template-columns: 1fr; }
+      .executive, .evidence-strip, .score-board, .market-focus, .galla-hero, .provider-case-main, .provider-context, .validation { grid-template-columns: 1fr; }
       .answer-grid { grid-template-columns: repeat(2,1fr); }
       .alt-grid { grid-template-columns: repeat(2,1fr); }
       .rule-grid { grid-template-columns: repeat(2,1fr); }
@@ -339,6 +362,7 @@
       .flow-node:not(:last-child)::after { display: none; }
       .cost-stack { grid-template-columns: repeat(2,1fr); }
       .provider-flow { grid-template-columns: repeat(2,1fr); }
+      .provider-limit-grid { grid-template-columns: repeat(2,1fr); }
       .sources { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 700px) {
@@ -362,6 +386,7 @@
       .flow { grid-template-columns: 1fr; }
       .cost-stack { grid-template-columns: 1fr; }
       .provider-flow { grid-template-columns: 1fr; }
+      .provider-block-head, .provider-limit-grid, .provider-fit { grid-template-columns: 1fr; }
       .footer { flex-direction: column; }
     }
 
@@ -380,7 +405,7 @@
       .hero-verdict { width: 285px; padding: 16px 18px; }
       .hero-verdict strong { font-size: 28px; }
       .rule-card, .alt-card, .score-card, .focus-card, .gate, .galla-profile,
-      .galla-analysis, .provider-profile, .provider-detail, .provider-step, .reference-box, .answer-card, .source, .evidence-box, tr { break-inside: avoid; }
+      .galla-analysis, .provider-profile, .provider-detail, .provider-step, .provider-limit, .provider-context-card, .reference-box, .answer-card, .source, .evidence-box, tr { break-inside: avoid; }
       .table-wrap { overflow: visible; }
       table { min-width: 0; font-size: 10px; }
       th, td { padding: 9px; }
@@ -569,7 +594,53 @@
           </div>
         </div>
 
-        <div class="provider-note"><strong>对本项目的意义：</strong>Telnyx证明“不用SIM、不用实体盒子”的WhatsApp AI接听与授权外呼已经可以商品化，构成硬件方案的成熟云端替代。它同时证明硬件不能绕过WhatsApp授权与地区限制，硬件只有在必须保留本地SIM、旧号码或传统线路时才形成额外价值。背景尽调方面，FCC于2025年曾就非法语音流量治理向Telnyx提出约449万美元拟处罚，Telnyx已正式争议；该事项并非WhatsApp产品问题，本次未查到最终罚款裁定。来源：<a href="https://telnyx.com/products/whatsapp-business-api" target="_blank" rel="noopener">产品页</a> · <a href="https://support.telnyx.com/en/articles/14668631-enabling-whatsapp-business-calling-on-telnyx-numbers" target="_blank" rel="noopener">Calling文档</a> · <a href="https://docs.fcc.gov/public/attachments/FCC-25-10A1.pdf" target="_blank" rel="noopener">FCC通知</a> · <a href="https://telnyx.com/resources/telnyx-response-to-fcc-nal" target="_blank" rel="noopener">Telnyx回应</a></div>
+        <div class="provider-block">
+          <div class="provider-block-head"><span class="label">KEY LIMITATIONS</span><div><h3>关键限制：能做AI WhatsApp电话，但不能无许可批量盲打</h3><p>限制来自Meta的Calling与消息规则，硬件、软件或云平台都不能绕过。</p></div></div>
+          <div class="provider-limit-grid">
+            <div class="provider-limit"><b>01 · 明确授权</b><span>企业主动呼叫前，必须获得用户明确的WhatsApp Calling Permission。</span></div>
+            <div class="provider-limit"><b>02 · 请求频率</b><span>每名用户最多每24小时一次、每7天两次通话授权请求。</span></div>
+            <div class="provider-limit"><b>03 · 授权期限</b><span>临时授权有效期为7天；用户也可以授予长期授权并随时撤销。</span></div>
+            <div class="provider-limit"><b>04 · 未接惩罚</b><span>连续两次未接会提醒用户；连续四次未接，外呼授权自动撤销。</span></div>
+            <div class="provider-limit"><b>05 · 国家限制</b><span>美国、加拿大、埃及、越南和尼日利亚号码目前不能发起企业主动WhatsApp电话。</span></div>
+            <div class="provider-limit"><b>06 · WABA门槛</b><span>企业WABA每日消息额度需达到至少2,000名不同用户，才能申请Calling。</span></div>
+            <div class="provider-limit"><b>07 · 仅限WhatsApp</b><span>只能呼叫WhatsApp用户，不能作为普通电话线路随意桥接到PSTN。</span></div>
+            <div class="provider-limit"><b>08 · 24小时窗口</b><span>消息在24小时客服窗口外，必须使用经过Meta审批的消息模板。</span></div>
+            <div class="provider-limit"><b>09 · 并发上限</b><span>Telnyx官方文档给出的上限为每个企业号码1,000路并发通话。</span></div>
+          </div>
+          <div class="provider-fit">
+            <div><strong>适合</strong>用户主动来电、预约回拨、售后回访，以及已经取得授权的销售线索。</div>
+            <div><strong>不适合</strong>导入陌生号码后批量AI冷呼、骚扰式追拨，或试图绕过WhatsApp授权流程。</div>
+          </div>
+        </div>
+
+        <div class="provider-context">
+          <article class="provider-context-card">
+            <span class="label">COMPANY BACKGROUND</span>
+            <h3>通信基础设施公司，不是单一WhatsApp工具</h3>
+            <p>Telnyx于2009年成立，创始人兼CEO为David Casem，总部位于美国得克萨斯州奥斯汀，并在丹佛、都柏林和阿姆斯特丹设有办公室。</p>
+            <ul>
+              <li>全球电话号码、号码携转、SIP Trunk与Voice API</li>
+              <li>SMS、MMS、RCS及WhatsApp通信能力</li>
+              <li>IoT SIM/eSIM、网络、存储与边缘计算</li>
+              <li>Voice AI、语音识别、语音合成与模型推理</li>
+              <li>官方披露17个网络节点、连接190多个国家，并在30多个国家拥有运营商身份</li>
+            </ul>
+            <p class="micro-source">来源：<a href="https://support.telnyx.com/en/articles/1130646-where-is-telnyx-located" target="_blank" rel="noopener">公司地点</a> · <a href="https://telnyx.com/why-telnyx" target="_blank" rel="noopener">网络与业务介绍</a></p>
+          </article>
+          <article class="provider-context-card accent">
+            <span class="label">IMPACT ON THE HARDWARE BOX</span>
+            <h3>它是典型的“无硬件替代方案”</h3>
+            <ul>
+              <li>证明WhatsApp AI接听和授权外呼已经能够商业化。</li>
+              <li>接听、STT、AI对话、录音、转接与数据分析均可由云端完成。</li>
+              <li>硬件的价值不能只是“让AI能打WhatsApp电话”，因为云平台已经能做。</li>
+              <li>硬件若要成立，需提供本地话机/模拟线路接入、保留旧号码、现场部署、实体交互或本地数据处理等云端没有的价值。</li>
+            </ul>
+            <div class="provider-maturity">成熟度判断：WhatsApp消息API已上线；WhatsApp AI语音已上线；WhatsApp原生AI文字自动化仍待正式文档确认。</div>
+          </article>
+        </div>
+
+        <div class="provider-note"><strong>监管背景：</strong>2025年2月，美国FCC曾就客户审查与非法自动语音流量治理向Telnyx发出约449万美元拟处罚通知。Telnyx已提出异议并要求撤销；截至本次检索未发现明确的最终罚款裁定，因此应表述为“FCC提出拟处罚且Telnyx正式争议”，不能写成已经最终定罪或罚款。该事项并非WhatsApp产品本身的问题。来源：<a href="https://docs.fcc.gov/public/attachments/FCC-25-10A1.pdf" target="_blank" rel="noopener">FCC原始通知</a> · <a href="https://telnyx.com/resources/telnyx-response-to-fcc-nal" target="_blank" rel="noopener">Telnyx官方回应</a></div>
       </div>
     </section>
 
@@ -602,7 +673,9 @@
         <article class="source"><small>A · OFFICIAL PRICING</small><a href="https://telnyx.com/pricing/whatsapp" target="_blank" rel="noopener">Telnyx WhatsApp Pricing</a><span>Calling与消息平台用量价格，以及Meta费用边界。</span></article>
         <article class="source"><small>A · OFFICIAL PRICING</small><a href="https://telnyx.com/pricing/voice-ai-agents" target="_blank" rel="noopener">Telnyx Voice AI Pricing</a><span>AI编排、STT、TTS、LLM与通信费用结构。</span></article>
         <article class="source"><small>A · COMPANY PROFILE</small><a href="https://support.telnyx.com/en/articles/1130646-where-is-telnyx-located" target="_blank" rel="noopener">Telnyx Company Background</a><span>2009年成立、奥斯汀总部与海外办公室。</span></article>
+        <article class="source"><small>A · OFFICIAL NETWORK</small><a href="https://telnyx.com/why-telnyx" target="_blank" rel="noopener">Why Telnyx</a><span>网络节点、全球覆盖、通信基础设施与API平台定位。</span></article>
         <article class="source"><small>A · REGULATOR</small><a href="https://docs.fcc.gov/public/attachments/FCC-25-10A1.pdf" target="_blank" rel="noopener">FCC Telnyx NAL</a><span>2025年拟处罚通知；属于监管指控，不等同最终裁定。</span></article>
+        <article class="source"><small>B · COMPANY RESPONSE</small><a href="https://telnyx.com/resources/telnyx-response-to-fcc-nal" target="_blank" rel="noopener">Telnyx FCC Response</a><span>Telnyx对拟处罚提出异议并要求撤销的公司口径。</span></article>
         <article class="source"><small>A · OFFICIAL PRODUCT</small><a href="https://gallabox.com/pricing" target="_blank" rel="noopener">Gallabox Pricing</a><span>Advanced价格、用户数、AI credits与Voice范围。</span></article>
         <article class="source"><small>A · OFFICIAL CHANGELOG</small><a href="https://changelog.gallabox.com/december-18-merge-contacts-and-voice-call" target="_blank" rel="noopener">Gallabox WhatsApp Voice AI</a><span>ElevenLabs接入、只支持呼入的明确说明。</span></article>
         <article class="source"><small>B · VERIFIED REVIEWS</small><a href="https://www.g2.com/products/gallabox/reviews" target="_blank" rel="noopener">Gallabox G2 Reviews</a><span>4.6/5、169条评价及常见优缺点。</span></article>
